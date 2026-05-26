@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foredrag I — Claude Code · En introduksjon · 321</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="deck">
+
+<!-- ============ SLIDE 1 — TITLE ============ -->
+<section class="slide slide-title">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Foredrag I · 09:00 — 10:00</span>
+  </header>
+  <div class="slide-content">
+    <div class="label anim-in">Del én</div>
+    <h1 class="display anim-in">Claude<br>Code<em>.</em></h1>
+    <p class="subtitle anim-in">en introduksjon.</p>
+    <div class="meta anim-in">
+      <span>60 minutter</span>
+      <span>utvikling + produkt</span>
+      <span>mai 2025</span>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Tittel</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 2 — DAGENS PROGRAM ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Dagens program</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">28. mai 2025</div>
+    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 54px); margin-bottom: 2rem;">Lær verktøyet, <em>bygg noe eget</em>.</h2>
+    <div class="agenda anim-in">
+      <div class="agenda-row"><span class="agenda-time">08:45</span><span class="agenda-name">Ankomst <em>— finn plass, sett opp utstyr</em></span><span class="agenda-dur">15 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">09:00</span><span class="agenda-name">Foredrag I <em>— Claude Code: en introduksjon</em></span><span class="agenda-dur">60 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">10:00</span><span class="agenda-name">Prosjektarbeid <em>— jobb med din egen idé</em></span><span class="agenda-dur">1 t 45 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">11:45</span><span class="agenda-name">Arbeidslunsj <em>— jobb videre og spis</em></span><span class="agenda-dur">35 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">12:20</span><span class="agenda-name">Foredrag II <em>— AI inn i utviklingsprosesser</em></span><span class="agenda-dur">60 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">13:20</span><span class="agenda-name">Mer prosjektarbeid</span><span class="agenda-dur">2 t 10 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">15:30</span><span class="agenda-name"><strong>Demo + kåring av topp 3</strong> <em>🏆 deltakerne stemmer</em></span><span class="agenda-dur">30 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">17:00</span><span class="agenda-name">Sosialt + middag</span><span class="agenda-dur"></span></div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Program</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 3 — AGENDA FOREDRAG ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Foredrag I</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Agenda · 60 minutter</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 64px); margin-bottom: 2.5rem;">Mental modell først, <em>prosessen etter</em>.</h2>
+    <div class="agenda anim-in">
+      <div class="agenda-row"><span class="agenda-time">00:00</span><span class="agenda-name">Hva er Claude Code <em>— mental modell og bruksområder</em></span><span class="agenda-dur">8 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">00:08</span><span class="agenda-name">Slik kommuniserer du med Claude <em>— naturlig språk og tydelige føringer</em></span><span class="agenda-dur">5 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">00:13</span><span class="agenda-name">Verktøyet og tilliten <em>— flater og permission-modi</em></span><span class="agenda-dur">5 min</span></div>
+      <div class="agenda-row"><span class="agenda-time">00:18</span><span class="agenda-name">Den agentiske løkka <em>— fire faser i detalj</em></span><span class="agenda-dur">15 min</span></div>
+      <div class="agenda-row" style="opacity: 0.55;"><span class="agenda-time">00:33</span><span class="agenda-name">Prompting og CLAUDE.md <em>— instruksjoner som huskes <span style="font-size: 0.8em;">— Morten</span></em></span><span class="agenda-dur">12 min</span></div>
+      <div class="agenda-row" style="opacity: 0.55;"><span class="agenda-time">00:45</span><span class="agenda-name">Feilsøk, fallgruver og kom i gang <em style="font-size: 0.8em;">— Morten</em></span><span class="agenda-dur">9 min</span></div>
+      <div class="agenda-row" style="opacity: 0.55;"><span class="agenda-time">00:54</span><span class="agenda-name">Q&amp;A <em style="font-size: 0.8em;">— Morten</em></span><span class="agenda-dur">6 min</span></div>
+      <div class="agenda-row" style="border-top: 1px solid var(--rule-strong); margin-top: 0.3rem; padding-top: 0.3rem;"><span class="agenda-time" style="color: var(--ink-mid);">11:45</span><span class="agenda-name" style="color: var(--ink-mid);">Arbeidslunsj <em>— jobb videre og spis</em></span><span class="agenda-dur" style="color: var(--ink-mid);">35 min</span></div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Agenda</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 4 — PRINSIPP ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§1 · Hva er Claude Code</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">§ 01 · Et grunnskille</div>
+    <h2 class="principle anim-in">Ikke en chat.<br><span class="amp">En agent.</span></h2>
+    <p class="principle-attrib anim-in">Den gjør ting — leser kode, endrer filer, kjører kommandoer, verifiserer.<br>
+      <span style="display: inline-block; margin-top: 0.6rem; font-family: var(--font-display); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 1.2rem; color: var(--ink-mid);">Du sier hva som skal skje. Den finner ut hvordan.</span>
+    </p>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Definisjon</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 5 — DIFF TABLE ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§1 · Mental modell</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Den enkleste forskjellen å huske</div>
+    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 2rem;">Det du har sett før <em>— og det som er nytt</em>.</h2>
+    <table class="t-table anim-in">
+      <thead>
+        <tr>
+          <th style="width: 18%;"></th>
+          <th style="width: 20%;">ChatGPT</th>
+          <th style="width: 20%;">Copilot</th>
+          <th style="width: 20%;">Cursor</th>
+          <th>Claude Code</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">Hva ser den?</td>
+          <td>Det du limer inn</td>
+          <td>Filen du redigerer</td>
+          <td>Åpne tabs + workspace</td>
+          <td style="color: var(--accent); font-weight: 500;">Hele prosjektet + bash + git + det den selv leter opp</td>
+        </tr>
+        <tr>
+          <td class="name">Hvem styrer?</td>
+          <td>Du, hver melding</td>
+          <td>Du (autocomplete)</td>
+          <td>Du (chat + edits)</td>
+          <td style="color: var(--accent); font-weight: 500;">Claude — innenfor dine permissions</td>
+        </tr>
+        <tr>
+          <td class="name">Sløyfer?</td>
+          <td>Nei</td>
+          <td>Nei</td>
+          <td>Begrenset</td>
+          <td style="color: var(--accent); font-weight: 500;">Ja — leser, gjør, verifiserer, gjentar</td>
+        </tr>
+        <tr>
+          <td class="name">Verifiserer seg selv?</td>
+          <td>Nei</td>
+          <td>Nei</td>
+          <td>Nei</td>
+          <td style="color: var(--accent); font-weight: 500;">Ja — kjører tester, leser output</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="body anim-in" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); max-width: none;">
+      <strong>For produkt og ledelse:</strong> du trenger ikke kode for å få verdi — bruk den til rask prototyping, research, og til å forstå systemer du ikke selv har bygget.
+    </p>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Mental modell</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 6 — USE CASES ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§1 · Bruksområder</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Hva kan du faktisk bruke det til?</div>
+    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 2rem;">Fire <em>typiske situasjoner</em>.</h2>
+    <div class="cards anim-in" style="grid-template-columns: 1fr 1fr;">
+      <div class="card">
+        <div class="card-num">i</div>
+        <h3 class="card-title" style="font-size: 1.3rem;">Forstå ukjent kode</h3>
+        <p class="card-body" style="font-style: italic; color: var(--ink-mid); margin-bottom: 0.6rem;">Ny i kodebasen — eller i en del du sjelden rører.</p>
+        <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-deep); background: var(--accent-soft); padding: 0.5rem 0.7rem; margin: 0.5rem 0; line-height: 1.4;">«forklar auth-flyten, fra login-endpoint til session-cookie»</p>
+        <p class="card-body" style="margin-top: auto; font-style: italic; color: var(--ink-soft);">Mental modell på fem minutter, ikke fem dager.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">ii</div>
+        <h3 class="card-title" style="font-size: 1.3rem;">Fikse en bug</h3>
+        <p class="card-body" style="font-style: italic; color: var(--ink-mid); margin-bottom: 0.6rem;">Bruker rapporterer noe rart, du må reprodusere og fikse.</p>
+        <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-deep); background: var(--accent-soft); padding: 0.5rem 0.7rem; margin: 0.5rem 0; line-height: 1.4;">«reproduser bug i src/checkout/, finn rotårsak, fiks, skriv test først»</p>
+        <p class="card-body" style="margin-top: auto; font-style: italic; color: var(--ink-soft);">Bug + test + commit i én flyt.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">iii</div>
+        <h3 class="card-title" style="font-size: 1.3rem;">Ny feature eller verktøy</h3>
+        <p class="card-body" style="font-style: italic; color: var(--ink-mid); margin-bottom: 0.6rem;">Skal bygge noe nytt — fra idé til kjørende kode.</p>
+        <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-deep); background: var(--accent-soft); padding: 0.5rem 0.7rem; margin: 0.5rem 0; line-height: 1.4;">«lag et script som parser produksjonslogg og sender varsel ved avvik»</p>
+        <p class="card-body" style="margin-top: auto; font-style: italic; color: var(--ink-soft);">Skjelett klar i ti minutter — du finpusser.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">iv</div>
+        <h3 class="card-title" style="font-size: 1.3rem;">Research <span style="font-size: 0.6em; color: var(--accent); font-style: italic;">— også uten kode</span></h3>
+        <p class="card-body" style="font-style: italic; color: var(--ink-mid); margin-bottom: 0.6rem;">Du vil forstå et system eller analysere data.</p>
+        <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent-deep); background: var(--accent-soft); padding: 0.5rem 0.7rem; margin: 0.5rem 0; line-height: 1.4;">«les denne Excel-rapporten og finn de tre største kostnadspostene»</p>
+        <p class="card-body" style="margin-top: auto; font-style: italic; color: var(--ink-soft);">Du forstår systemet uten å grave.</p>
+      </div>
+    </div>
+    <p class="body anim-in" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); text-align: center; max-width: none;">Felles for alle: konkret problem, klar scope, verifiserbart resultat.</p>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Bruksområder</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE — KOMMUNIKASJON ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§2 · Kommunikasjon</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Slik snakker du med Claude</div>
+    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 2rem;">Naturlig språk. <em>Tydelige føringer</em>.</h2>
+    <div class="cols-2 weighted anim-in">
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Fire elementer som gjør en prompt effektiv</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 1rem;">
+          <li style="padding: 0.6rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 1rem;">
+            <strong style="color: var(--accent); min-width: 5rem;">Rolle</strong>
+            <span>Hvem er Claude i denne oppgaven? <em style="color: var(--ink-faded);">(valgfritt)</em></span>
+          </li>
+          <li style="padding: 0.6rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 1rem;">
+            <strong style="color: var(--accent); min-width: 5rem;">Kontekst</strong>
+            <span>Hva er situasjonen? Hva finnes av bakgrunn?</span>
+          </li>
+          <li style="padding: 0.6rem 0; border-bottom: 1px solid var(--rule); display: flex; gap: 1rem;">
+            <strong style="color: var(--accent); min-width: 5rem;">Oppgave</strong>
+            <span>Hva skal gjøres — konkret og avgrenset.</span>
+          </li>
+          <li style="padding: 0.6rem 0; display: flex; gap: 1rem;">
+            <strong style="color: var(--accent); min-width: 5rem;">Vellykket</strong>
+            <span>Format, lengde, språk — hva er et godt svar?</span>
+          </li>
+        </ul>
+        <p class="body" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem;">Du trenger ikke lære kommandoer. Skriv som til en dyktig kollega — bare vær tydelig på hva som er et godt resultat.</p>
+      </div>
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Tre eksempler</div>
+        <div style="margin-top: 0.8rem; display: flex; flex-direction: column; gap: 0.9rem;">
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; background: var(--bg-deep); border-left: 3px solid var(--accent); padding: 0.9rem 1rem; line-height: 1.6; color: var(--ink);">«Her er møtereferatet. Lag tabell med beslutninger og ansvarlig person. På norsk.»</div>
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; background: var(--bg-deep); border-left: 3px solid var(--accent); padding: 0.9rem 1rem; line-height: 1.6; color: var(--ink);">«Les vedlagte spesifikasjon. Hva mangler for at en utvikler kan starte jobben? Punktliste.»</div>
+          <div style="font-family: var(--font-mono); font-size: 0.82rem; background: var(--bg-deep); border-left: 3px solid var(--accent); padding: 0.9rem 1rem; line-height: 1.6; color: var(--ink);">«I hele sesjonen: alltid norsk. Aldri 'requirements' — bruk 'krav'. Tabeller fremfor lister der det passer.»</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Kommunikasjon</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 7 — PLATFORM + TEMPO ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Verktøyet</span>
+  </header>
+  <div class="slide-content">
+    <div class="cols-2 weighted">
+      <div class="col anim-in">
+        <div class="eyebrow">Hvor du jobber</div>
+        <h2 class="heading" style="font-size: clamp(32px, 3.8vw, 56px);">Vi bruker <em>terminalen i dag</em>.</h2>
+        <p class="body" style="margin-top: 1.5rem;">I terminalen ser du hvert steg Claude tar — hva den leser, hva den gjør, hvilke valg den tar. Det gjør det enklere å forstå og følge med.</p>
+        <p class="body" style="margin-top: 1rem;">Etterpå bruker du det der du vil: VS Code, JetBrains, desktop-app eller claude.ai/code.</p>
+      </div>
+      <div class="col anim-in">
+        <div class="eyebrow">Tilgjengelige flater</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem;">
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--rule);">Terminal (CLI) — <em>i dag</em></li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--rule);">VS Code + JetBrains</li>
+          <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--rule);">Desktop-app (Mac / Windows)</li>
+          <li style="padding: 0.5rem 0;">claude.ai/code</li>
+        </ul>
+        <p class="body" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); font-size: 0.9rem;">Samme modell, samme arbeidsflyt — du velger flate etterpå.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Verktøyet</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 9 — PERMISSIONS ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§3 · Permission-modi</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Bytt med <kbd>Shift</kbd> + <kbd>Tab</kbd></div>
+    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 1.5rem;">Du bestemmer hvor mye <em>tillit</em>.</h2>
+    <table class="t-table anim-in">
+      <thead>
+        <tr><th style="width: 16%;">Modus</th><th style="width: 42%;">Hva</th><th>Når brukes</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="name">Plan mode</td><td><span class="pill ok">Read-only</span> Leser og analyserer, men endrer ingenting.</td><td><strong>Start her</strong> for ny oppgave eller ukjent kode.</td></tr>
+        <tr><td class="name">Default</td><td>Spør før alle filendringer og bash-kommandoer.</td><td>Når planen er god — bygg allowlist gradvis.</td></tr>
+        <tr><td class="name">Accept edits</td><td>Edits og read-only bash uten spørsmål. Spør for destruktivt.</td><td>Rutineoppgaver du stoler på.</td></tr>
+        <tr><td class="name">Auto</td><td>AI klassifiserer og blokkerer mistenkelige kommandoer.</td><td>Langkjørende oppgaver.</td></tr>
+        <tr><td class="name">Bypass</td><td><span class="pill warn">Alt tillatt</span> Kun i sandbox eller container.</td><td>Aldri på din egen maskin.</td></tr>
+      </tbody>
+    </table>
+    <div class="anim-in" style="margin-top: 1.5rem; padding: 1rem 1.4rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
+      <p class="body" style="font-size: 0.95rem; margin: 0;"><strong>Typisk flyt:</strong> Ny oppgave → <strong>plan mode</strong> → er planen god? → <strong>default</strong> → «Yes, don't ask again» bygger allowlist → <strong>accept-edits</strong> for rutine.</p>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Permission-modi</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 10 — DEN AGENTISKE LØKKA ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§4 · Den agentiske løkka</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">§ 04 · Det viktigste å forstå</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 64px); margin-bottom: 3rem;">Fire faser. <em>Igjen og igjen</em>.</h2>
+    <div class="steps anim-in">
+      <div class="step">
+        <div class="step-num"><em>I</em></div>
+        <h3 class="step-name">Beskriv</h3>
+        <p class="step-body">Fortell hva du vil lage og hvorfor. <em>«Jeg trenger et verktøy som gjør X. Brukerne er Y.»</em> Claude spør hvis noe mangler.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><em>II</em></div>
+        <h3 class="step-name">Planlegg</h3>
+        <p class="step-body"><em>«Lag en plan.»</em> Claude foreslår steg. Du leser, justerer og godkjenner. Ikke ett tegn er bygget ennå.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><em>III</em></div>
+        <h3 class="step-name">Bygg</h3>
+        <p class="step-body"><em>«Bygg steg 1.»</em> Claude jobber. Følg med underveis — si fra om retningen er feil, ikke vent til slutt.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><em>IV</em></div>
+        <h3 class="step-name">Sjekk</h3>
+        <p class="step-body">Prøv det selv. Er det riktig? <em>«Legg til X, fjern Y.»</em> Tilbake til steg III. Gjenta til det er godt nok.</p>
+      </div>
+    </div>
+    <p class="body anim-in" style="margin-top: 2.5rem; font-style: italic; text-align: center; color: var(--ink-mid); max-width: none;">
+      Du trenger ikke vite hvordan det bygges. Du trenger å vite <strong>hva som er godt nok</strong>.
+    </p>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Arbeidsflyt</span>
+  </footer>
+</section>
+
+<!-- ============ FASE I — BESKRIV ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Eivind · Fase I</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Fase I av IV</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 64px); margin-bottom: 2rem;"><em>Beskriv</em> — brief Claude som en ny kollega.</h2>
+    <div class="cols-2 anim-in">
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Hva du gjør</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem;">
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Beskriv <strong>problemet</strong> du vil løse — ikke løsningen</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Fortell hvem som skal bruke verktøyet og til hva</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Si hva du har fra før — Excel-ark, papirskjema, eksisterende rutine</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem;">Si hva som er viktigst å få til <strong>i første omgang</strong></li>
+        </ul>
+        <div style="margin-top: 1.4rem; padding: 0.85rem 1.1rem; background: var(--bg-deep); border-left: 3px solid var(--ink-faded);">
+          <p style="margin: 0; font-size: 0.88rem; color: var(--ink-mid);"><strong style="font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faded);">Vanlig feil ·</strong> Starte for bredt. «Lag et system for hele produksjonen» gir et vagt svar. Start smalt — bygg ut etterpå.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Tips</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem; font-size: 0.95rem;">
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">Én konkret situasjon er bedre enn hele behovet på én gang</li>
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">Ta med kontekst om Moelven: sagbruk, skift, antall brukere</li>
+          <li style="padding: 0.45rem 0;">Si gjerne hva du <em>ikke</em> vil: «ingen lange rapporter — bare enkle meldinger»</li>
+        </ul>
+        <div style="margin-top: 1.4rem; font-family: var(--font-mono); font-size: 0.8rem; background: var(--bg-deep); border-left: 3px solid var(--accent); padding: 0.9rem 1rem; line-height: 1.6; color: var(--ink);">«Jeg vil lage et verktøy der operatørene kan melde fra om feil på maskiner. I dag bruker vi papirskjema. Verktøyet skal fungere på nettbrett, og leder skal få varsel med én gang noe meldes inn.»</div>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Beskriv</span>
+  </footer>
+</section>
+
+<!-- ============ FASE II — PLANLEGG ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Eivind · Fase II</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Fase II av IV</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 64px); margin-bottom: 2rem;"><em>Planlegg</em> — godkjenn før det bygges.</h2>
+    <div class="cols-2 anim-in">
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Hva du gjør</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem;">
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Les planen Claude foreslår — forstår du hva som beskrives?</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Korriger det som ikke stemmer. Still spørsmål om det du ikke forstår</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Prioriter: hva <strong>må</strong> være med, hva kan vente til versjon 2?</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem;">Si eksplisitt <em>«ja, dette ser bra ut»</em> — Claude starter ikke uten</li>
+        </ul>
+        <div style="margin-top: 1.4rem; padding: 0.85rem 1.1rem; background: var(--bg-deep); border-left: 3px solid var(--ink-faded);">
+          <p style="margin: 0; font-size: 0.88rem; color: var(--ink-mid);"><strong style="font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faded);">Vanlig feil ·</strong> Si «ja, bare kjør» uten å lese planen. Du oppdager halvveis at verktøyet løser feil problem.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Tips</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem; font-size: 0.95rem;">
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">Be om en punktliste i prioritert rekkefølge — ikke en lang tekst</li>
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">Tenk høyt: «Stemmer det at vi trenger X, eller holder det med Y?»</li>
+          <li style="padding: 0.45rem 0;">Claude skal forklare, ikke imponere — spør til du skjønner</li>
+        </ul>
+        <div style="margin-top: 1.4rem; font-family: var(--font-mono); font-size: 0.8rem; background: var(--bg-deep); border-left: 3px solid var(--accent); padding: 0.9rem 1rem; line-height: 1.6; color: var(--ink);">«Kan du oppsummere hva du skal lage og i hvilken rekkefølge? Maks fem punkter, kort forklaring på hvert. Jeg godkjenner før du starter.»</div>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Planlegg</span>
+  </footer>
+</section>
+
+<!-- ============ FASE III — BYGG ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Eivind · Fase III</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Fase III av IV</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 64px); margin-bottom: 2rem;"><em>Bygg</em> — følg med, styr kursen.</h2>
+    <div class="cols-2 anim-in">
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Hva du gjør</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem;">
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Les oppdateringene Claude gir — forstå <strong>hva</strong> som er gjort, ikke hvordan</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Si fra hvis noe virker rart — ikke vent til alt er ferdig</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Test underveis hvis mulig — én del om gangen</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem;">Stopp-spørsmålet: <em>«Hva bygger du akkurat nå?»</em></li>
+        </ul>
+        <div style="margin-top: 1.4rem; padding: 0.85rem 1.1rem; background: var(--bg-deep); border-left: 3px solid var(--ink-faded);">
+          <p style="margin: 0; font-size: 0.88rem; color: var(--ink-mid);"><strong style="font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faded);">Vanlig feil ·</strong> La Claude kjøre helt ferdig uten å sjekke underveis — og så oppdage at hele løsningen tok feil retning.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Tips</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem; font-size: 0.95rem;">
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">Be Claude stoppe etter hvert naturlig steg og oppsummere</li>
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">Du kan alltid si «vent, dette trenger vi ikke» og endre kurs</li>
+          <li style="padding: 0.45rem 0;">Tidlig tilbakemelding er billig. Sen tilbakemelding er dyrt.</li>
+        </ul>
+        <div style="margin-top: 1.4rem; font-family: var(--font-mono); font-size: 0.8rem; background: var(--bg-deep); border-left: 3px solid var(--accent); padding: 0.9rem 1rem; line-height: 1.6; color: var(--ink);">«Vent — vi trenger ikke tre separate skjema. Sagbrukene skal bruke samme skjema, men vi må kunne filtrere per lokasjon i rapporten.»</div>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Bygg</span>
+  </footer>
+</section>
+
+<!-- ============ FASE IV — SJEKK ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Eivind · Fase IV</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Fase IV av IV</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 64px); margin-bottom: 2rem;"><em>Sjekk</em> — test, tilbakemeld, gjenta.</h2>
+    <div class="cols-2 anim-in">
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Hva du gjør</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem;">
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Prøv verktøyet som en <strong>faktisk bruker</strong> — ikke som den som bestilte det</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Skriv ned konkrete ting som ikke fungerer eller mangler</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem; margin-bottom: 0.5rem;">Skill mellom «dette er feil» og «dette kan bli bedre»</li>
+          <li style="border-left: 2px solid var(--accent); padding: 0.5rem 0 0.5rem 1rem;">Gi tilbakemeldingen som konkrete instruksjoner, ikke generell kritikk</li>
+        </ul>
+        <div style="margin-top: 1.4rem; padding: 0.85rem 1.1rem; background: var(--bg-deep); border-left: 3px solid var(--ink-faded);">
+          <p style="margin: 0; font-size: 0.88rem; color: var(--ink-mid);"><strong style="font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faded);">Vanlig feil ·</strong> Vag tilbakemelding: «Det er ikke helt sånn vi jobber.» Claude kan ikke gjette — beskriv hva du forventet å se.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">Tips</div>
+        <ul class="body" style="list-style: none; padding: 0; margin-top: 0.8rem; font-size: 0.95rem;">
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">La en kollega teste uten forklaring — se hva de henger seg opp i</li>
+          <li style="padding: 0.45rem 0; border-bottom: 1px solid var(--rule);">Iterasjon er normalt, ikke et tegn på at noe gikk galt</li>
+          <li style="padding: 0.45rem 0;">Sett en grense: hva er godt nok for <em>denne runden</em>?</li>
+        </ul>
+        <div style="margin-top: 1.4rem; font-family: var(--font-mono); font-size: 0.8rem; background: var(--bg-deep); border-left: 3px solid var(--accent); padding: 0.9rem 1rem; line-height: 1.6; color: var(--ink);">«Jeg testet skjemaet. To ting: 1) Maskin-ID-feltet er ikke synlig nok — operatørene vil overse det. 2) Leder får ikke med seg hvilken skift det gjaldt. Kan du fikse begge?»</div>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Eivind · Sjekk</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 12 — PROMPTING PRINCIPLE ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§5 · Prompting</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">§ 05 · Et prinsipp</div>
+    <h2 class="principle anim-in" style="font-size: clamp(40px, 6vw, 100px);">Spesifikk.<br>Verifiserbar.<br><span class="amp">Med kontekst.</span></h2>
+    <p class="principle-attrib anim-in">Hver prompt skal ha alle tre.<br>
+      <span style="display: inline-block; margin-top: 0.6rem; font-family: var(--font-display); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 1.2rem; color: var(--ink-mid);">En vag prompt betaler du i iterasjoner og frustrasjon — kontekstvinduet er en begrenset ressurs.</span>
+    </p>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · Prinsipp</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 13 — PROMPT MAKEOVER ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§5 · Prompt-makeover</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Tre eksempler — fra svak til <em>kjørbar</em></div>
+    <h2 class="heading anim-in" style="font-size: clamp(30px, 3.6vw, 50px); margin-bottom: 1.5rem;">Slik ser <em>spesifikk + verifiserbar + kontekst</em> ut.</h2>
+    <div style="display: grid; gap: 1rem;" class="anim-in">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="compare-card bad" style="padding: 0.9rem 1.1rem;">
+          <div class="tag" style="margin-bottom: 0.4rem;">Svak</div>
+          <div class="quote" style="font-size: 0.95rem;">«fiks loginbuggen»</div>
+        </div>
+        <div class="compare-card good" style="padding: 0.9rem 1.1rem;">
+          <div class="tag" style="margin-bottom: 0.4rem;">Bra</div>
+          <div class="quote" style="font-size: 0.95rem;">«Brukere får blank skjerm etter feil login. Reproduser med <code>test@x.no</code> + feil passord. Fiks i <code>src/auth/</code>. Skriv failing test først. Verifiser med <code>npm test:auth</code>.»</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="compare-card bad" style="padding: 0.9rem 1.1rem;">
+          <div class="tag" style="margin-bottom: 0.4rem;">Svak</div>
+          <div class="quote" style="font-size: 0.95rem;">«lag en rapport»</div>
+        </div>
+        <div class="compare-card good" style="padding: 0.9rem 1.1rem;">
+          <div class="tag" style="margin-bottom: 0.4rem;">Bra</div>
+          <div class="quote" style="font-size: 0.95rem;">«Les <code>produksjon.csv</code>. Lag ukentlig rapport med topp 5 avvik, sortert på kostnad. Eksporter til <code>rapport.xlsx</code>. Vis antall rader prosessert.»</div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="compare-card bad" style="padding: 0.9rem 1.1rem;">
+          <div class="tag" style="margin-bottom: 0.4rem;">Svak</div>
+          <div class="quote" style="font-size: 0.95rem;">«rydd opp i koden»</div>
+        </div>
+        <div class="compare-card good" style="padding: 0.9rem 1.1rem;">
+          <div class="tag" style="margin-bottom: 0.4rem;">Bra</div>
+          <div class="quote" style="font-size: 0.95rem;">«I <code>src/Form.tsx</code>: ekstraher felt-validering til <code>hooks/useValidation.ts</code>. Behold all atferd. Kjør <code>npm test</code> før og etter.»</div>
+        </div>
+      </div>
+    </div>
+    <p class="body anim-in" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); max-width: none; text-align: center;">
+      Verifiseringskriterier: testkommando · expected output · screenshot · <em>«returner null for tom input»</em>.
+    </p>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · Prompt-makeover</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 14 — CLAUDE.md ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§6 · CLAUDE.md</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">§ 06 · Persistent kontekst</div>
+    <h2 class="heading anim-in" style="margin-bottom: 1.5rem;">Et levende dokument som <em>vokser i bruk</em>.</h2>
+    <p class="lede anim-in" style="margin-bottom: 1.2rem;">Vanlig markdown i prosjektrot. Leses ved sesjonsstart. Når Claude gjør samme feil to ganger — legg regelen i CLAUDE.md.</p>
+    <div class="anim-in" style="margin-bottom: 1.8rem; padding: 0.9rem 1.2rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
+      <p class="body" style="font-size: 0.95rem; margin: 0; font-style: italic;">
+        <strong>I praksis:</strong> Claude brukte <code>yarn</code> første gang. Du sa «vi bruker npm». Du la regelen i CLAUDE.md. Claude har brukt <code>npm</code> de neste femti gangene — uten påminnelse.
+      </p>
+    </div>
+    <div class="cols-2 anim-in">
+      <div class="col">
+        <div class="col-label" style="color: var(--accent);">— Hører hjemme</div>
+        <ul class="body" style="font-size: 1rem; list-style: none; padding: 0;">
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Bash-kommandoer Claude trenger</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Kodestil som avviker fra standard</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Test- og build-kommandoer</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Branching og PR-prosess</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Arkitekturvalg som er unike</li>
+          <li style="padding: 0.4rem 0;">Vanlige fallgruver dere har oppdaget</li>
+        </ul>
+      </div>
+      <div class="col">
+        <div class="col-label" style="color: var(--ink-faded);">— Hører ikke hjemme</div>
+        <ul class="body" style="font-size: 1rem; list-style: none; padding: 0; color: var(--ink-faded);">
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Ting Claude allerede vet</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Generiske «skriv ren kode»</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Lang API-doc (link i stedet)</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Filbeskrivelser per fil</li>
+          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Ting som endrer seg ofte</li>
+          <li style="padding: 0.4rem 0;">Self-evident practices</li>
+        </ul>
+      </div>
+    </div>
+    <p class="body anim-in" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); text-align: center;">Under 200 linjer. <code>/init</code> lager utkast. Skriv <code>#</code>-prefiks i en prompt for å legge ting i memory automatisk.</p>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · CLAUDE.md</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 15 — CLAUDE.md EKSEMPEL ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§6 · CLAUDE.md eksempel</span>
+  </header>
+  <div class="slide-content">
+    <div class="cols-2 weighted">
+      <div class="col anim-in">
+        <div class="eyebrow">Slik vokser den</div>
+        <h2 class="heading" style="font-size: clamp(32px, 4vw, 56px);">Start kort. Legg til <em>når noe skurrer</em>.</h2>
+        <p class="body" style="margin-top: 1.5rem;">Kjør <code>/init</code> → slett 60% av støyen → jobb litt → når Claude gjør feil, fortell den å legge regelen inn.</p>
+        <p class="body" style="margin-top: 1rem;">Rådgivende, ikke garantert. For ting som <em>må</em> skje — bruk hooks (foredrag II).</p>
+      </div>
+      <div class="col anim-in">
+        <pre class="code" data-lang="CLAUDE.md"><span class="k"># Kodestil</span>
+- ES modules, ikke CommonJS
+- 2-space indent, async/await
+
+<span class="k"># Testing</span>
+- <span class="v">`npm test`</span> før commit
+- Tester i <span class="v">src/__tests__/</span>
+
+<span class="k"># Git</span>
+- Feature-brancher fra <span class="v">main</span>
+- Aldri push direkte til main
+
+<span class="k"># Gotchas</span>
+- Bruk <span class="v">npm</span>, ikke <span class="v">yarn</span> (lock-fil)
+- Tester trenger lokal DB: <span class="v">npm run db:setup</span>
+- API krever <span class="v">REDIS_URL</span> i .env.local</pre>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · Eksempel</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 16 — FEILSØK ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§7 · Når det skurrer</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">§ 07 · Feilsøk-flyt</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 60px); margin-bottom: 2.5rem;">Når Claude <em>sitter fast</em>.</h2>
+    <table class="t-table anim-in">
+      <thead>
+        <tr><th style="width: 38%;">Symptom</th><th>Gjør dette</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">Samme feil to ganger</td>
+          <td><kbd>Esc</kbd> · <code>/clear</code> · omformulér prompten med mer kontekst</td>
+        </tr>
+        <tr>
+          <td class="name">Utforsker uendelig</td>
+          <td><kbd>Esc</kbd> · scope ned: <em>«kun <code>src/auth/</code>»</em></td>
+        </tr>
+        <tr>
+          <td class="name">«Ser bra ut» — du tror det ikke</td>
+          <td><em>«kjør testene og lim inn output»</em> · <em>«kjør koden og vis resultatet»</em></td>
+        </tr>
+        <tr>
+          <td class="name">Du har mistet oversikt</td>
+          <td><kbd>Esc</kbd> <kbd>Esc</kbd> for rewind · eller <code>/compact</code></td>
+        </tr>
+        <tr>
+          <td class="name">Usikker på om den skjønte</td>
+          <td><em>«før du gjør noe — repeter oppgaven og planen»</em></td>
+        </tr>
+        <tr>
+          <td class="name">Konteksten blir tung</td>
+          <td><code>/compact</code> for å komprimere · <code>/clear</code> mellom oppgaver</td>
+        </tr>
+        <tr>
+          <td class="name">Du vet ikke hva som er sant</td>
+          <td>Be om kilder: <em>«vis meg fila og linjene du baserer det på»</em></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · Feilsøk</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 17 — FALLGRUVER ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§8 · Fallgruver</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Det første-gangs-brukere går i</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 60px); margin-bottom: 2.5rem;">Seks <em>fallgruver</em>.</h2>
+    <div class="cards cols-3 anim-in">
+      <div class="card">
+        <div class="card-num">i</div>
+        <h3 class="card-title">For lang CLAUDE.md</h3>
+        <p class="card-body">Over 500 linjer = Claude ignorerer halvparten. Mål: under 200.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">ii</div>
+        <h3 class="card-title">Ingen verifikasjon</h3>
+        <p class="card-body">Uten test-cases blir det «ser bra ut» → bugs i prod.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">iii</div>
+        <h3 class="card-title">Uendelig utforsking</h3>
+        <p class="card-body">«Utforsk databasen» uten scope = 100 filer lest, kontekst sprengt.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">iv</div>
+        <h3 class="card-title">Kitchen sink-sesjon</h3>
+        <p class="card-body">Task A, B, tilbake til A — kontekst fylles med urelatert info.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">v</div>
+        <h3 class="card-title">Bash uten scope</h3>
+        <p class="card-body">«Kjør testene» = hele suiten. Si <em>«kjør auth-tester»</em> i stedet.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">vi</div>
+        <h3 class="card-title">Forventning om perfeksjon</h3>
+        <p class="card-body">Tenk på Claude som en junior — gode instruksjoner og feedback.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · Fallgruver</span>
+  </footer>
+</section>
+
+<!-- ============ SLIDE 18 — KOM I GANG ============ -->
+<section class="slide">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">§9 · Kom i gang</span>
+  </header>
+  <div class="slide-content">
+    <div class="eyebrow anim-in">Til kl. 10:00 — sjekkliste for å starte</div>
+    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 60px); margin-bottom: 3rem;">Fem trinn, <em>i denne rekkefølgen</em>.</h2>
+    <div class="steps anim-in" style="grid-template-columns: repeat(5, 1fr);">
+      <div class="step">
+        <div class="step-num"><em>i</em></div>
+        <h3 class="step-name">Start sesjon</h3>
+        <p class="step-body"><code>cd prosjekt</code><br><code>claude</code></p>
+      </div>
+      <div class="step">
+        <div class="step-num"><em>ii</em></div>
+        <h3 class="step-name">Forklar deg</h3>
+        <p class="step-body">Plan mode på.<br><em>«forklar denne kodebasen»</em></p>
+      </div>
+      <div class="step">
+        <div class="step-num"><em>iii</em></div>
+        <h3 class="step-name">Lag CLAUDE.md</h3>
+        <p class="step-body"><code>/init</code><br>Rens til under 50 linjer.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><em>iv</em></div>
+        <h3 class="step-name">Velg én oppgave</h3>
+        <p class="step-body">Konkret. Med verifika&shy;sjonskriterier.</p>
+      </div>
+      <div class="step">
+        <div class="step-num"><em>v</em></div>
+        <h3 class="step-name">Kjør løkka</h3>
+        <p class="step-body">Plan → bytt → implementer → test.</p>
+      </div>
+    </div>
+    <div class="anim-in" style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; max-width: 1200px;">
+      <div>
+        <div class="col-label" style="color: var(--accent);">Selvsjekk underveis</div>
+        <p class="body" style="font-size: 0.92rem; margin-top: 0.5rem;">Klarer du å få Claude til å forklare prosjektet ditt?</p>
+      </div>
+      <div>
+        <div class="col-label" style="color: var(--accent);">&nbsp;</div>
+        <p class="body" style="font-size: 0.92rem; margin-top: 0.5rem;">Har du en CLAUDE.md under 50 linjer?</p>
+      </div>
+      <div>
+        <div class="col-label" style="color: var(--accent);">&nbsp;</div>
+        <p class="body" style="font-size: 0.92rem; margin-top: 0.5rem;">Har du fullført én oppgave med verifikasjon?</p>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · Sjekkliste</span>
+  </footer>
+</section>
+
+
+<!-- ============ SLIDE 20 — CLOSING ============ -->
+<section class="slide slide-title">
+  <header class="slide-header">
+    <span class="brand">Moelven Industrier · AI-dag</span>
+    <span class="right">Slutt · Q&amp;A</span>
+  </header>
+  <div class="slide-content">
+    <div class="label anim-in">Til prosjektarbeidet</div>
+    <h1 class="display anim-in" style="font-size: clamp(60px, 10vw, 160px);">Spørsmål?<br><em>Så koder vi</em>.</h1>
+    <div class="anim-in" style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; max-width: 1200px;">
+      <div>
+        <div class="col-label" style="color: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;">Etter lunsj — foredrag II · 12:20</div>
+        <p class="body" style="font-size: 1.05rem; font-family: var(--font-display); font-style: italic; color: var(--ink-mid);">Sub-agents og parallellisering · skills · hooks · MCP · A–Å-flyt for ny feature.</p>
+      </div>
+      <div>
+        <div class="col-label" style="color: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;">Demo kl. 15:30</div>
+        <p class="body" style="font-size: 1.05rem; font-family: var(--font-display); font-style: italic; color: var(--ink-mid);">Presenter det du har bygget. Topp 3 kåres av deltakerne. Så middag.</p>
+      </div>
+    </div>
+  </div>
+  <footer class="slide-footer">
+    <span class="counter"></span>
+    <span class="right">Morten · Pause til 10:00</span>
+  </footer>
+</section>
+
+</div>
+<script src="deck.js"></script>
+</body>
+</html>
