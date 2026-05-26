@@ -16,7 +16,7 @@
   --rule-strong:  rgba(17, 15, 42, 0.22);
 
   --gradient: linear-gradient(135deg, #d400b8 0%, #4d16e0 35%, #0992b8 70%, #00b84a 100%);
-  --gradient-text: linear-gradient(100deg, #c400aa 0%, #12106b 50%, #0992b8 100%);
+  --gradient-text: linear-gradient(90deg, #d400b8 0%, #2d12c8 33%, #0992b8 66%, #00a842 100%);
 
   --font-display: 'Syne', 'Arial Black', sans-serif;
   --font-body:    'Instrument Sans', -apple-system, sans-serif;
@@ -118,6 +118,8 @@ body {
 
 .slide-header .right,
 .slide-footer .right { text-align: right; margin-left: auto; }
+
+.slide-header a.brand { text-decoration: none; cursor: pointer; }
 
 .slide-content {
   flex: 1;
