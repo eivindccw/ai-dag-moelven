@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="nb">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Foredrag II — Skalering med Claude Code · 321</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Foredrag II — Skalering med Claude Code · 321</title>
+<link href="style.css" rel="stylesheet"/>
+<style>
     .t-table.compact th,
     .t-table.compact td {
       padding: 0.55rem 1.1rem 0.55rem 0;
@@ -18,196 +19,190 @@
 </head>
 <body>
 <div class="deck">
-
 <!-- ============ SLIDE 1 — TITLE ============ -->
 <section class="slide slide-title">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">Foredrag II · 12:20 — 13:20</span>
-  </header>
-  <div class="slide-content">
-    <div class="label anim-in">Del to</div>
-    <h1 class="display anim-in">Skalering med<br><em>Claude Code</em>.</h1>
-    <p class="subtitle anim-in">sub-agents, skills, hooks, MCP og plugins.</p>
-    <div class="meta anim-in">
-      <span>60 minutter</span>
-      <span>fortsettelse</span>
-      <span>etter lunsj</span>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Tittel</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Tittel</span>
+</header>
+<div class="slide-content">
+<div class="label anim-in">Del to</div>
+<h1 class="display anim-in">Skalering med<br/><em>Claude Code</em>.</h1>
+<p class="subtitle anim-in">sub-agents, skills, hooks, MCP og plugins.</p>
+<div class="meta anim-in">
+<span>60 minutter</span>
+<span>fortsettelse</span>
+<span>etter lunsj</span>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Tittel</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 2 — TRE VERKTØY ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Tre verktøy</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Tre måter å skalere arbeidet</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 2rem;">Skills, hooks og <em>agents</em>.<span class="small">Tre lag for å utvide Claude Code utover én sesjon.</span></h2>
-    <div class="cols-3 anim-in">
-      <div class="col">
-        <div class="col-label" style="color: var(--accent);">Skills</div>
-        <h3 style="font-size: 1.5rem; margin-top: 0.3rem; font-style: normal; font-weight: 400;">Gjenbrukbar framgangsmåte.</h3>
-        <p class="body" style="font-size: 0.95rem; margin-top: 0.6rem;">Skriv prompten én gang som markdown. Invokér med <code>/&lt;navn&gt;</code> eller la Claude trigge automatisk når relevant.</p>
-        <p class="body" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--ink-faded); margin-top: 0.6rem;">.claude/skills/</p>
-      </div>
-      <div class="col">
-        <div class="col-label" style="color: var(--accent);">Hooks</div>
-        <h3 style="font-size: 1.5rem; margin-top: 0.3rem; font-style: normal; font-weight: 400;">Deterministisk lag.</h3>
-        <p class="body" style="font-size: 0.95rem; margin-top: 0.6rem;">Shell-scripts som kjører på events (PreToolUse, PostToolUse). Skjer hver gang — ikke modellavhengig.</p>
-        <p class="body" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--ink-faded); margin-top: 0.6rem;">.claude/settings.json</p>
-      </div>
-      <div class="col">
-        <div class="col-label" style="color: var(--accent);">Agents</div>
-        <h3 style="font-size: 1.5rem; margin-top: 0.3rem; font-style: normal; font-weight: 400;">Parallelle sesjoner.</h3>
-        <p class="body" style="font-size: 0.95rem; margin-top: 0.6rem;">Isolert kontekst, egne verktøy. Returnerer kun resultatet til hovedsesjonen. Brukes alene eller parallelt.</p>
-        <p class="body" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--ink-faded); margin-top: 0.6rem;">.claude/agents/</p>
-      </div>
-    </div>
-    <p class="body anim-in" style="margin-top: 2rem; font-style: italic; color: var(--ink-mid); text-align: center; max-width: none;">Vi tar dem én etter én — først sub-agents, så skills, så hooks. MCP og plugins til slutt.</p>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Tre verktøy</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Tre verktøy</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Tre måter å skalere arbeidet</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 2rem;">Skills, hooks og <em>agents</em>.<span class="small">Tre lag for å utvide Claude Code utover én sesjon.</span></h2>
+<div class="cols-3 anim-in">
+<div class="col">
+<div class="col-label" style="color: var(--accent);">Skills</div>
+<h3 style="font-size: 1.5rem; margin-top: 0.3rem; font-style: normal; font-weight: 400;">Gjenbrukbar framgangsmåte.</h3>
+<p class="body" style="font-size: 0.95rem; margin-top: 0.6rem;">Skriv prompten én gang som markdown. Invokér med <code>/&lt;navn&gt;</code> eller la Claude trigge automatisk når relevant.</p>
+<p class="body" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--ink-faded); margin-top: 0.6rem;">.claude/skills/</p>
+</div>
+<div class="col">
+<div class="col-label" style="color: var(--accent);">Hooks</div>
+<h3 style="font-size: 1.5rem; margin-top: 0.3rem; font-style: normal; font-weight: 400;">Deterministisk lag.</h3>
+<p class="body" style="font-size: 0.95rem; margin-top: 0.6rem;">Shell-scripts som kjører på events (PreToolUse, PostToolUse). Skjer hver gang — ikke modellavhengig.</p>
+<p class="body" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--ink-faded); margin-top: 0.6rem;">.claude/settings.json</p>
+</div>
+<div class="col">
+<div class="col-label" style="color: var(--accent);">Agents</div>
+<h3 style="font-size: 1.5rem; margin-top: 0.3rem; font-style: normal; font-weight: 400;">Parallelle sesjoner.</h3>
+<p class="body" style="font-size: 0.95rem; margin-top: 0.6rem;">Isolert kontekst, egne verktøy. Returnerer kun resultatet til hovedsesjonen. Brukes alene eller parallelt.</p>
+<p class="body" style="font-size: 0.85rem; font-family: var(--font-mono); color: var(--ink-faded); margin-top: 0.6rem;">.claude/agents/</p>
+</div>
+</div>
+<p class="body anim-in" style="margin-top: 2rem; font-style: italic; color: var(--ink-mid); text-align: center; max-width: none;">Vi tar dem én etter én — først sub-agents, så skills, så hooks. MCP og plugins til slutt.</p>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Tre verktøy</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 3 — SUB-AGENTS ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Sub-agents</span>
-  </header>
-  <div class="slide-content">
-    <div class="cols-2 weighted">
-      <div class="col anim-in">
-        <div class="eyebrow">Sub-agents</div>
-        <h2 class="heading">Sub-agents — egen sesjon, <em>eget kontekstvindu</em>.</h2>
-        <p class="body" style="margin-top: 1.5rem;">Isolert kontekst, egne verktøy. Agenten gjør sitt arbeid og returnerer kun resultatet til hovedsesjonen — uten å fylle den med tool-kall.</p>
-        <p class="body" style="margin-top: 1rem;">Innebygde: <code>Explore</code> (read-only søk), <code>Plan</code> (arkitektur), <code>general-purpose</code>. Egne i <code>~/.claude/agents/</code>.</p>
-      </div>
-      <div class="col anim-in">
-        <div class="col-label" style="margin-bottom: 1.5rem;">Når dra inn en agent</div>
-        <ul class="body" style="list-style: none; padding: 0; font-size: 1rem;">
-          <li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem; margin-bottom: 0.6rem;">Søk som vil sprenge konteksten</li>
-          <li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem; margin-bottom: 0.6rem;">Uavhengig deloppgave</li>
-          <li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem; margin-bottom: 0.6rem;">Skal kjøres samtidig som du jobber</li>
-          <li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem;">Trenger isolert kontekst eller egen branch</li>
-        </ul>
-        <p class="body" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem;">Liten oppgave som hører her? Gjør det selv — agent er overkill.</p>
-      </div>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Sub-agents</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Sub-agents</span>
+</header>
+<div class="slide-content">
+<div class="cols-2 weighted">
+<div class="col anim-in">
+<div class="eyebrow">Sub-agents</div>
+<h2 class="heading">Sub-agents — egen sesjon, <em>eget kontekstvindu</em>.</h2>
+<p class="body" style="margin-top: 1.5rem;">Isolert kontekst, egne verktøy. Agenten gjør sitt arbeid og returnerer kun resultatet til hovedsesjonen — uten å fylle den med tool-kall.</p>
+<p class="body" style="margin-top: 1rem;">Innebygde: <code>Explore</code> (read-only søk), <code>Plan</code> (arkitektur), <code>general-purpose</code>. Egne i <code>~/.claude/agents/</code>.</p>
+</div>
+<div class="col anim-in">
+<div class="col-label" style="margin-bottom: 1.5rem;">Når dra inn en agent</div>
+<ul class="body" style="list-style: none; padding: 0; font-size: 1rem;">
+<li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem; margin-bottom: 0.6rem;">Søk som vil sprenge konteksten</li>
+<li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem; margin-bottom: 0.6rem;">Uavhengig deloppgave</li>
+<li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem; margin-bottom: 0.6rem;">Skal kjøres samtidig som du jobber</li>
+<li style="border-left: 2px solid var(--accent); padding: 0.6rem 0 0.6rem 1.2rem;">Trenger isolert kontekst eller egen branch</li>
+</ul>
+<p class="body" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem;">Liten oppgave som hører her? Gjør det selv — agent er overkill.</p>
+</div>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Sub-agents</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 4 — PARALLELLISERING ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Parallellisering</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Tre saker, samme tid</div>
-    <h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 60px); margin-bottom: 2.5rem;">Parallellisering med <em>worktrees</em>.</h2>
-    <div class="cols-2 anim-in" style="align-items: stretch;">
-      <div class="col" style="background: var(--bg-deep); padding: 2rem; border: 1px solid var(--rule);">
-        <div class="col-label" style="color: var(--ink-faded);">Sekvensielt</div>
-        <h3 style="color: var(--ink-soft); font-style: normal; font-weight: 400;">Tre research-spørsmål</h3>
-        <div style="margin-top: 2rem; font-family: var(--font-mono); font-size: 1.1rem; line-height: 2;">
-          <div>Sak A &nbsp;<span style="color: var(--ink-faded);">━━━━━━</span> 2 min</div>
-          <div>Sak B &nbsp;<span style="color: var(--ink-faded);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;━━━━━━</span> 2 min</div>
-          <div>Sak C &nbsp;<span style="color: var(--ink-faded);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;━━━━━━</span> 2 min</div>
-        </div>
-        <p style="margin-top: 2rem; font-family: var(--font-display); font-style: italic; font-size: 2rem; color: var(--ink-soft);">= 6 min</p>
-      </div>
-      <div class="col" style="background: var(--accent-soft); padding: 2rem; border: 1px solid var(--accent);">
-        <div class="col-label" style="color: var(--accent);">Med agenter</div>
-        <h3 style="color: var(--accent); font-style: normal; font-weight: 400;">Tre agenter, samtidig</h3>
-        <div style="margin-top: 2rem; font-family: var(--font-mono); font-size: 1.1rem; line-height: 2;">
-          <div>Sak A &nbsp;<span style="color: var(--accent);">━━━━━━</span></div>
-          <div>Sak B &nbsp;<span style="color: var(--accent);">━━━━━━</span></div>
-          <div>Sak C &nbsp;<span style="color: var(--accent);">━━━━━━</span></div>
-        </div>
-        <p style="margin-top: 2rem; font-family: var(--font-display); font-style: italic; font-size: 2rem; color: var(--accent);">= 2 min</p>
-      </div>
-    </div>
-    <div class="cols-2 anim-in" style="margin-top: 2rem;">
-      <p class="body" style="font-style: italic; color: var(--ink-mid); margin: 0;">
-        <strong>Worktrees</strong> gir hver agent sin egen git-checkout — ingen merge-konflikt mellom <code>feature/api</code> og <code>feature/ui</code>.
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Parallellisering</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Tre saker, samme tid</div>
+<h2 class="heading anim-in" style="font-size: clamp(34px, 4.2vw, 60px); margin-bottom: 2.5rem;">Parallellisering med <em>worktrees</em>.</h2>
+<div class="cols-2 anim-in" style="align-items: stretch;">
+<div class="col" style="background: var(--bg-deep); padding: 2rem; border: 1px solid var(--rule);">
+<div class="col-label" style="color: var(--ink-faded);">Sekvensielt</div>
+<h3 style="color: var(--ink-soft); font-style: normal; font-weight: 400;">Tre research-spørsmål</h3>
+<div style="margin-top: 2rem; font-family: var(--font-mono); font-size: 1.1rem; line-height: 2;">
+<div>Sak A  <span style="color: var(--ink-faded);">━━━━━━</span> 2 min</div>
+<div>Sak B  <span style="color: var(--ink-faded);">       ━━━━━━</span> 2 min</div>
+<div>Sak C  <span style="color: var(--ink-faded);">              ━━━━━━</span> 2 min</div>
+</div>
+<p style="margin-top: 2rem; font-family: var(--font-display); font-style: italic; font-size: 2rem; color: var(--ink-soft);">= 6 min</p>
+</div>
+<div class="col" style="background: var(--accent-soft); padding: 2rem; border: 1px solid var(--accent);">
+<div class="col-label" style="color: var(--accent);">Med agenter</div>
+<h3 style="color: var(--accent); font-style: normal; font-weight: 400;">Tre agenter, samtidig</h3>
+<div style="margin-top: 2rem; font-family: var(--font-mono); font-size: 1.1rem; line-height: 2;">
+<div>Sak A  <span style="color: var(--accent);">━━━━━━</span></div>
+<div>Sak B  <span style="color: var(--accent);">━━━━━━</span></div>
+<div>Sak C  <span style="color: var(--accent);">━━━━━━</span></div>
+</div>
+<p style="margin-top: 2rem; font-family: var(--font-display); font-style: italic; font-size: 2rem; color: var(--accent);">= 2 min</p>
+</div>
+</div>
+<div class="cols-2 anim-in" style="margin-top: 2rem;">
+<p class="body" style="font-style: italic; color: var(--ink-mid); margin: 0;">
+<strong>Worktrees</strong> gir hver agent sin egen git-checkout — ingen merge-konflikt mellom <code>feature/api</code> og <code>feature/ui</code>.
       </p>
-      <p class="body" style="font-style: italic; color: var(--ink-mid); margin: 0;">
-        <strong>Token-bevissthet:</strong> fem parallelle Opus-agenter koster fem ganger. Bruk <code>Haiku</code> for søk og research, <code>Opus</code> for koding.
+<p class="body" style="font-style: italic; color: var(--ink-mid); margin: 0;">
+<strong>Token-bevissthet:</strong> fem parallelle Opus-agenter koster fem ganger. Bruk <code>Haiku</code> for søk og research, <code>Opus</code> for koding.
       </p>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Parallellisering</span>
-  </footer>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Parallellisering</span>
+</span></footer>
 </section>
-
 <!-- ============ MODELLVALG ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Modellvalg</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Riktig modell til riktig oppgave</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.8rem;">Hvilken <em>modell</em> for hva.<span class="small">Tre familier med forskjellig styrke, hastighet og pris.</span></h2>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 18%;">Modell</th><th style="width: 32%;">Best på</th><th>Bruk for</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name">Opus 4.7</td><td>Resonnement, kompleks koding, dyp analyse.</td><td>Plan-fasen for store endringer · ultrareview · debugging du har stått fast i · arkitekturvalg</td></tr>
-        <tr><td class="name">Sonnet 4.6</td><td>Balansert kvalitet og hastighet.</td><td>Standard daglig arbeid · implementering · refaktorering · de fleste skills og agenter</td></tr>
-        <tr><td class="name">Haiku 4.5</td><td>Hastighet og kostnad.</td><td>Søk og research · sub-agent-oppgaver · klassifisering · enkle lookups</td></tr>
-      </tbody>
-    </table>
-    <div class="cols-2 anim-in" style="margin-top: 1.2rem; gap: 2vw;">
-      <div style="padding: 0.9rem 1.2rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
-        <p style="margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Praktisk mønster ·</strong> Default Sonnet. Bytt til Opus med <code>/model</code> når noe er hardt. Bruk Haiku i sub-agenter som bare skal hente data tilbake.</p>
-      </div>
-      <div style="padding: 0.9rem 1.2rem; border-left: 3px solid var(--ink-mid); background: var(--bg-deep);">
-        <p style="margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);"><strong style="color: var(--ink-mid); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Kostnad ·</strong> Opus koster grovt 5× Sonnet, som koster grovt 5× Haiku. Sjekk <code>/cost</code> jevnlig — særlig i langkjørende eller parallelle agent-sesjoner.</p>
-      </div>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Modellvalg</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Modellvalg</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Riktig modell til riktig oppgave</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.8rem;">Hvilken <em>modell</em> for hva.<span class="small">Tre familier med forskjellig styrke, hastighet og pris.</span></h2>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 18%;">Modell</th><th style="width: 32%;">Best på</th><th>Bruk for</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">Opus 4.7</td><td>Resonnement, kompleks koding, dyp analyse.</td><td>Plan-fasen for store endringer · ultrareview · debugging du har stått fast i · arkitekturvalg</td></tr>
+<tr><td class="name">Sonnet 4.6</td><td>Balansert kvalitet og hastighet.</td><td>Standard daglig arbeid · implementering · refaktorering · de fleste skills og agenter</td></tr>
+<tr><td class="name">Haiku 4.5</td><td>Hastighet og kostnad.</td><td>Søk og research · sub-agent-oppgaver · klassifisering · enkle lookups</td></tr>
+</tbody>
+</table>
+<div class="cols-2 anim-in" style="margin-top: 1.2rem; gap: 2vw;">
+<div style="padding: 0.9rem 1.2rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
+<p style="margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Praktisk mønster ·</strong> Default Sonnet. Bytt til Opus med <code>/model</code> når noe er hardt. Bruk Haiku i sub-agenter som bare skal hente data tilbake.</p>
+</div>
+<div style="padding: 0.9rem 1.2rem; border-left: 3px solid var(--ink-mid); background: var(--bg-deep);">
+<p style="margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);"><strong style="color: var(--ink-mid); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Kostnad ·</strong> Opus koster grovt 5× Sonnet, som koster grovt 5× Haiku. Sjekk <code>/cost</code> jevnlig — særlig i langkjørende eller parallelle agent-sesjoner.</p>
+</div>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Modellvalg</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 5 — SKILLS ANATOMI ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Skills · anatomi</span>
-  </header>
-  <div class="slide-content">
-    <div class="cols-2 weighted">
-      <div class="col anim-in">
-        <div class="eyebrow">Skills · anatomi</div>
-        <h2 class="heading" style="font-size: clamp(32px, 4vw, 60px);">Anatomien til en <em>skill</em>.</h2>
-        <p class="body" style="margin-top: 1.5rem;">En mappe i <code>~/.claude/skills/&lt;navn&gt;/</code> med en <code>SKILL.md</code>-fil. Frontmatter definerer navn, beskrivelse og tilgjengelige verktøy. Innholdet er instruksjonene Claude følger.</p>
-        <div style="margin-top: 1.5rem; padding: 0.9rem 1.2rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
-          <p style="margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Auto-trigger ·</strong> Hvis <code>description</code> matcher konteksten, kan Claude bruke skillen uten at du skriver <code>/&lt;navn&gt;</code>.</p>
-        </div>
-      </div>
-      <div class="col anim-in">
-        <pre class="code" data-lang="SKILL.md"><span class="c">---</span>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Skills · anatomi</span>
+</header>
+<div class="slide-content">
+<div class="cols-2 weighted">
+<div class="col anim-in">
+<div class="eyebrow">Skills · anatomi</div>
+<h2 class="heading" style="font-size: clamp(32px, 4vw, 60px);">Anatomien til en <em>skill</em>.</h2>
+<p class="body" style="margin-top: 1.5rem;">En mappe i <code>~/.claude/skills/&lt;navn&gt;/</code> med en <code>SKILL.md</code>-fil. Frontmatter definerer navn, beskrivelse og tilgjengelige verktøy. Innholdet er instruksjonene Claude følger.</p>
+<div style="margin-top: 1.5rem; padding: 0.9rem 1.2rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
+<p style="margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Auto-trigger ·</strong> Hvis <code>description</code> matcher konteksten, kan Claude bruke skillen uten at du skriver <code>/&lt;navn&gt;</code>.</p>
+</div>
+</div>
+<div class="col anim-in">
+<pre class="code" data-lang="SKILL.md"><span class="c">---</span>
 <span class="k">name</span>: pr-summary
 <span class="k">description</span>: Lag et lesbart sammendrag av en PR
 <span class="k">allowed-tools</span>: Bash(git *), Bash(gh *), Read
@@ -224,87 +219,84 @@ For PR-en denne sesjonen jobber med:
 5. Foreslå <span class="v">test plan</span> — hva må verifiseres
 
 Format: markdown, klar for Slack-kanalen.</pre>
-      </div>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Skills · anatomi</span>
-  </footer>
+</div>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Skills · anatomi</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 6 — SKILLS EKSEMPLER ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Skills · eksempler</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Innebygde og felles-skills</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.8rem;">Skills i <em>bruk</em>.<span class="small">Innebygde fra Anthropic, og det dere kan lage selv.</span></h2>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 22%;">Skill</th><th style="width: 38%;">Hva den gjør</th><th>Når brukes</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name"><code>/init</code></td><td>Skanner kodebasen og genererer utkast til CLAUDE.md.</td><td>Aller første ting i nytt prosjekt</td></tr>
-        <tr><td class="name"><code>/review</code></td><td>Gjennomgang av endringer i gjeldende branch med standard sjekkliste.</td><td>Før PR åpnes · før merge</td></tr>
-        <tr><td class="name"><code>/security-review</code></td><td>Analyser pending changes for sikkerhetsrisiko — injection, auth-feil, lekkasje.</td><td>Før noe når produksjon</td></tr>
-        <tr><td class="name"><code>/pr-summary</code></td><td>Lesbart sammendrag av PR for Slack — hva, hvorfor, risiko, testplan.</td><td>Når PR er klar for review</td></tr>
-        <tr><td class="name"><code>/ultrareview</code></td><td>Multi-agent dyp peer-review — flere perspektiver i parallell.</td><td>Større endringer · sikkerhets-kritisk kode</td></tr>
-        <tr><td class="name">Egne team-skills</td><td>Felles standarder, sjekklister og prosesser i prosjektets <code>.claude/skills/</code>.</td><td>Commit til repo — alle drar nytte</td></tr>
-      </tbody>
-    </table>
-    <p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem; text-align: center;">Egne skills committes til repoet og deles automatisk med teamet. Ingen distribusjonsmekanikk å håndtere.</p>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Skills · eksempler</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Skills · eksempler</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Innebygde og felles-skills</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.8rem;">Skills i <em>bruk</em>.<span class="small">Innebygde fra Anthropic, og det dere kan lage selv.</span></h2>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 22%;">Skill</th><th style="width: 38%;">Hva den gjør</th><th>Når brukes</th></tr>
+</thead>
+<tbody>
+<tr><td class="name"><code>/init</code></td><td>Skanner kodebasen og genererer utkast til CLAUDE.md.</td><td>Aller første ting i nytt prosjekt</td></tr>
+<tr><td class="name"><code>/review</code></td><td>Gjennomgang av endringer i gjeldende branch med standard sjekkliste.</td><td>Før PR åpnes · før merge</td></tr>
+<tr><td class="name"><code>/security-review</code></td><td>Analyser pending changes for sikkerhetsrisiko — injection, auth-feil, lekkasje.</td><td>Før noe når produksjon</td></tr>
+<tr><td class="name"><code>/pr-summary</code></td><td>Lesbart sammendrag av PR for Slack — hva, hvorfor, risiko, testplan.</td><td>Når PR er klar for review</td></tr>
+<tr><td class="name"><code>/ultrareview</code></td><td>Multi-agent dyp peer-review — flere perspektiver i parallell.</td><td>Større endringer · sikkerhets-kritisk kode</td></tr>
+<tr><td class="name">Egne team-skills</td><td>Felles standarder, sjekklister og prosesser i prosjektets <code>.claude/skills/</code>.</td><td>Commit til repo — alle drar nytte</td></tr>
+</tbody>
+</table>
+<p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem; text-align: center;">Egne skills committes til repoet og deles automatisk med teamet. Ingen distribusjonsmekanikk å håndtere.</p>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Skills · eksempler</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 7 — HOOKS EVENTS ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Hooks · events</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Hooks</div>
-    <h2 class="heading anim-in" style="margin-bottom: 1rem; font-size: clamp(32px, 4vw, 60px);">Hooks — <em>events</em> og hva de utløses av.</h2>
-    <p class="lede anim-in" style="margin-bottom: 2rem;">Shell-kommandoer som kjører på events. Deterministiske — uavhengig av modellens vurdering.</p>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 22%;">Event</th><th style="width: 38%;">Når</th><th>Praktisk eksempel</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name">PreToolUse</td><td>Før en tool-kall kjøres.</td><td>Blokker <code>git push origin main</code> · enrich med kontekst</td></tr>
-        <tr><td class="name">PostToolUse</td><td>Etter en tool-kall.</td><td>Auto-format · log audit-trail · trigger test</td></tr>
-        <tr><td class="name">UserPromptSubmit</td><td>Før prompten sendes til modellen.</td><td>Ekspandér tokens · spam-filter · injiser kontekst</td></tr>
-        <tr><td class="name">SessionStart</td><td>Når sesjonen starter.</td><td>Last <code>.env</code> fra vault · sjekk dependencies</td></tr>
-        <tr><td class="name">Stop · SessionEnd</td><td>Når sesjonen avsluttes.</td><td>Oppsummering · varsel i Slack · clean up temp-filer</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Hooks · events</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Hooks · events</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Hooks</div>
+<h2 class="heading anim-in" style="margin-bottom: 1rem; font-size: clamp(32px, 4vw, 60px);">Hooks — <em>events</em> og hva de utløses av.</h2>
+<p class="lede anim-in" style="margin-bottom: 2rem;">Shell-kommandoer som kjører på events. Deterministiske — uavhengig av modellens vurdering.</p>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 22%;">Event</th><th style="width: 38%;">Når</th><th>Praktisk eksempel</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">PreToolUse</td><td>Før en tool-kall kjøres.</td><td>Blokker <code>git push origin main</code> · enrich med kontekst</td></tr>
+<tr><td class="name">PostToolUse</td><td>Etter en tool-kall.</td><td>Auto-format · log audit-trail · trigger test</td></tr>
+<tr><td class="name">UserPromptSubmit</td><td>Før prompten sendes til modellen.</td><td>Ekspandér tokens · spam-filter · injiser kontekst</td></tr>
+<tr><td class="name">SessionStart</td><td>Når sesjonen starter.</td><td>Last <code>.env</code> fra vault · sjekk dependencies</td></tr>
+<tr><td class="name">Stop · SessionEnd</td><td>Når sesjonen avsluttes.</td><td>Oppsummering · varsel i Slack · clean up temp-filer</td></tr>
+</tbody>
+</table>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Hooks · events</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 8 — HOOKS CODE ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Hooks · konfigurasjon</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Hooks · konfigurasjon</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 1.5rem;">Hooks i <em>settings.json</em> og shell-script.</h2>
-    <div class="cols-2">
-      <div class="col anim-in">
-        <div class="col-label">.claude/settings.json</div>
-        <pre class="code" data-lang="JSON"><span class="p">{</span>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Didrik · Hooks · konfigurasjon</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Hooks · konfigurasjon</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 1.5rem;">Hooks i <em>settings.json</em> og shell-script.</h2>
+<div class="cols-2">
+<div class="col anim-in">
+<div class="col-label">.claude/settings.json</div>
+<pre class="code" data-lang="JSON"><span class="p">{</span>
   <span class="s">"hooks"</span><span class="p">: {</span>
     <span class="s">"PostToolUse"</span><span class="p">: [{</span>
       <span class="s">"matcher"</span><span class="p">:</span> <span class="s">"Edit|Write"</span><span class="p">,</span>
@@ -322,10 +314,10 @@ Format: markdown, klar for Slack-kanalen.</pre>
     <span class="p">}]</span>
   <span class="p">}</span>
 <span class="p">}</span></pre>
-      </div>
-      <div class="col anim-in">
-        <div class="col-label">block-dangerous.sh</div>
-        <pre class="code" data-lang="bash"><span class="c">#!/bin/bash</span>
+</div>
+<div class="col anim-in">
+<div class="col-label">block-dangerous.sh</div>
+<pre class="code" data-lang="bash"><span class="c">#!/bin/bash</span>
 CMD=$(<span class="k">jq</span> -r <span class="s">'.tool_input.command'</span>)
 
 <span class="k">if</span> <span class="k">echo</span> <span class="s">"$CMD"</span> | <span class="k">grep</span> -qE \
@@ -339,65 +331,63 @@ CMD=$(<span class="k">jq</span> -r <span class="s">'.tool_input.command'</span>)
   <span class="k">exit</span> 2
 <span class="k">fi</span>
 <span class="k">exit</span> 0</pre>
-        <p class="body" style="font-size: 0.85rem; margin-top: 1rem; font-style: italic; color: var(--ink-mid);">Hierarki: <code>~/.claude/settings.json</code> (du) → <code>.claude/settings.json</code> (team) → <code>settings.local.json</code> (gitignorert).</p>
-      </div>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Didrik · Hooks · konfigurasjon</span>
-  </footer>
+<p class="body" style="font-size: 0.85rem; margin-top: 1rem; font-style: italic; color: var(--ink-mid);">Hierarki: <code>~/.claude/settings.json</code> (du) → <code>.claude/settings.json</code> (team) → <code>settings.local.json</code> (gitignorert).</p>
+</div>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Didrik · Hooks · konfigurasjon</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 9 — MCP SERVERE ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— MCP · servere</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Model Context Protocol</div>
-    <h2 class="heading anim-in" style="margin-bottom: 1rem; font-size: clamp(32px, 4vw, 60px);">MCP — koble Claude til <em>eksterne datakilder</em>.</h2>
-    <p class="lede anim-in" style="margin-bottom: 2rem;">Åpen standard for å gi Claude tilgang til verktøy og data — uten å håndtere auth selv.</p>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 18%;">Server</th><th style="width: 40%;">Hva Claude får tilgang til</th><th>Hva du kan gjøre</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name">GitHub</td><td>Issues, PRs, CI-runs, kommentarer.</td><td>Fra sak til kode-endring · auto-oppsummering av PR</td></tr>
-        <tr><td class="name">Notion</td><td>Sider, databaser, kommentarer.</td><td>Specs, design-doc og møtenotater i kontekst</td></tr>
-        <tr><td class="name">Gmail</td><td>Lese, søke, skrive e-post.</td><td>Oppsummere tråder · skrive utkast til oppfølging</td></tr>
-        <tr><td class="name">Google Drive</td><td>Dokumenter, regneark, mapper.</td><td>Hente kravspec og research direkte inn</td></tr>
-        <tr><td class="name">Linear</td><td>Issues, prosjekter, kommentarer.</td><td>Fra sak til implementering — full ring</td></tr>
-        <tr><td class="name">Eget API</td><td>Hva som helst dere bygger.</td><td>Datakilder, interne verktøy, custom workflow</td></tr>
-      </tbody>
-    </table>
-    <p class="body anim-in" style="margin-top: 1.2rem; font-family: var(--font-mono); font-size: 0.9rem; text-align: center;"><code>claude mcp list</code> — se hva som er konfigurert.</p>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Morten · MCP · servere</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Morten · MCP · servere</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Model Context Protocol</div>
+<h2 class="heading anim-in" style="margin-bottom: 1rem; font-size: clamp(32px, 4vw, 60px);">MCP — koble Claude til <em>eksterne datakilder</em>.</h2>
+<p class="lede anim-in" style="margin-bottom: 2rem;">Åpen standard for å gi Claude tilgang til verktøy og data — uten å håndtere auth selv.</p>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 18%;">Server</th><th style="width: 40%;">Hva Claude får tilgang til</th><th>Hva du kan gjøre</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">GitHub</td><td>Issues, PRs, CI-runs, kommentarer.</td><td>Fra sak til kode-endring · auto-oppsummering av PR</td></tr>
+<tr><td class="name">Notion</td><td>Sider, databaser, kommentarer.</td><td>Specs, design-doc og møtenotater i kontekst</td></tr>
+<tr><td class="name">Gmail</td><td>Lese, søke, skrive e-post.</td><td>Oppsummere tråder · skrive utkast til oppfølging</td></tr>
+<tr><td class="name">Google Drive</td><td>Dokumenter, regneark, mapper.</td><td>Hente kravspec og research direkte inn</td></tr>
+<tr><td class="name">Linear</td><td>Issues, prosjekter, kommentarer.</td><td>Fra sak til implementering — full ring</td></tr>
+<tr><td class="name">Eget API</td><td>Hva som helst dere bygger.</td><td>Datakilder, interne verktøy, custom workflow</td></tr>
+</tbody>
+</table>
+<p class="body anim-in" style="margin-top: 1.2rem; font-family: var(--font-mono); font-size: 0.9rem; text-align: center;"><code>claude mcp list</code> — se hva som er konfigurert.</p>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Morten · MCP · servere</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 10 — MCP I PRAKSIS ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— MCP · praksis</span>
-  </header>
-  <div class="slide-content">
-    <div class="cols-2 weighted">
-      <div class="col anim-in">
-        <div class="eyebrow">Konkret eksempel</div>
-        <h2 class="heading" style="font-size: clamp(32px, 4vw, 56px);">MCP i praksis — fra <em>issue til PR</em>.</h2>
-        <p class="body" style="margin-top: 1.5rem;">Skritt én: koble på GitHub.</p>
-        <pre class="code-block-tight">claude mcp add github</pre>
-        <p class="body" style="margin-top: 1rem;">Skritt to: instruér Claude.</p>
-      </div>
-      <div class="col anim-in">
-        <div class="col-label">Prompt i Claude Code</div>
-        <pre class="code" data-lang="prompt">Hent issue <span class="s">#142</span> fra repo X.
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Morten · MCP · praksis</span>
+</header>
+<div class="slide-content">
+<div class="cols-2 weighted">
+<div class="col anim-in">
+<div class="eyebrow">Konkret eksempel</div>
+<h2 class="heading" style="font-size: clamp(32px, 4vw, 56px);">MCP i praksis — fra <em>issue til PR</em>.</h2>
+<p class="body" style="margin-top: 1.5rem;">Skritt én: koble på GitHub.</p>
+<pre class="code-block-tight">claude mcp add github</pre>
+<p class="body" style="margin-top: 1rem;">Skritt to: instruér Claude.</p>
+</div>
+<div class="col anim-in">
+<div class="col-label">Prompt i Claude Code</div>
+<pre class="code" data-lang="prompt">Hent issue <span class="s">#142</span> fra repo X.
 
 Les beskrivelsen og kommentarene.
 Utforsk relevante filer i kodebasen.
@@ -408,262 +398,254 @@ Når alt grønt:
   2. push
   3. åpne PR med <span class="s">/pr-summary</span>
   4. linke tilbake til issue</pre>
-        <div style="margin-top: 1.5rem; padding: 1rem 1.2rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
-          <p class="body" style="font-size: 0.9rem; margin: 0;"><strong>Sikkerhet:</strong> MCP-server bestemmer scope. Read-only der mulig. Hooks kan logge alle MCP-kall for audit.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Morten · MCP · praksis</span>
-  </footer>
+<div style="margin-top: 1.5rem; padding: 1rem 1.2rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
+<p class="body" style="font-size: 0.9rem; margin: 0;"><strong>Sikkerhet:</strong> MCP-server bestemmer scope. Read-only der mulig. Hooks kan logge alle MCP-kall for audit.</p>
+</div>
+</div>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Morten · MCP · praksis</span>
+</span></footer>
 </section>
-
 <!-- ============ DEV-VERKTØY ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Utviklingsverktøy</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Claude som del av utviklingsstacken</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.8rem;">Hvilke <em>utviklingsverktøy</em> spiller godt sammen.<span class="small">Claude blir mest effektiv når dine vanlige dev-verktøy er på plass.</span></h2>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 26%;">Verktøy</th><th>Hvordan Claude bruker det</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name">Git + <code>gh</code> CLI</td><td>Atomic commits, brancher, PR-er — Claude kan hele <code>gh</code>-flyten ut av boksen</td></tr>
-        <tr><td class="name">Test-rammeverk</td><td>npm test · pytest · vitest — Claude kjører, leser output, fikser feil iterativt</td></tr>
-        <tr><td class="name">Linter og formatter</td><td>Prettier · ESLint · Black · Ruff — godt fanget i PostToolUse-hook</td></tr>
-        <tr><td class="name">Type-sjekker</td><td>TypeScript · mypy · ty — Claude leser feilmeldinger og iterer mot grønt</td></tr>
-        <tr><td class="name">Pakke-håndtering</td><td>npm · pnpm · uv · bun — Claude håndterer dependencies og lock-filer</td></tr>
-        <tr><td class="name">Container-verktøy</td><td>Docker · devcontainers — Claude bygger og kjører isolert</td></tr>
-        <tr><td class="name">IDE-integrasjon</td><td>VS Code · JetBrains-extension med inline diffs og statuslinje</td></tr>
-      </tbody>
-    </table>
-    <div class="anim-in" style="margin-top: 1rem; padding: 0.85rem 1.3rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
-      <p style="margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Tommelfingerregel ·</strong> Gjør tester og lint kjørbart med én kommando hver. Da kan Claude verifisere seg selv og iterere uten å spørre deg hver gang.</p>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Morten · Utviklingsverktøy</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Morten · Utviklingsverktøy</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Claude som del av utviklingsstacken</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.8rem;">Hvilke <em>utviklingsverktøy</em> spiller godt sammen.<span class="small">Claude blir mest effektiv når dine vanlige dev-verktøy er på plass.</span></h2>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 26%;">Verktøy</th><th>Hvordan Claude bruker det</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">Git + <code>gh</code> CLI</td><td>Atomic commits, brancher, PR-er — Claude kan hele <code>gh</code>-flyten ut av boksen</td></tr>
+<tr><td class="name">Test-rammeverk</td><td>npm test · pytest · vitest — Claude kjører, leser output, fikser feil iterativt</td></tr>
+<tr><td class="name">Linter og formatter</td><td>Prettier · ESLint · Black · Ruff — godt fanget i PostToolUse-hook</td></tr>
+<tr><td class="name">Type-sjekker</td><td>TypeScript · mypy · ty — Claude leser feilmeldinger og iterer mot grønt</td></tr>
+<tr><td class="name">Pakke-håndtering</td><td>npm · pnpm · uv · bun — Claude håndterer dependencies og lock-filer</td></tr>
+<tr><td class="name">Container-verktøy</td><td>Docker · devcontainers — Claude bygger og kjører isolert</td></tr>
+<tr><td class="name">IDE-integrasjon</td><td>VS Code · JetBrains-extension med inline diffs og statuslinje</td></tr>
+</tbody>
+</table>
+<div class="anim-in" style="margin-top: 1rem; padding: 0.85rem 1.3rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
+<p style="margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Tommelfingerregel ·</strong> Gjør tester og lint kjørbart med én kommando hver. Da kan Claude verifisere seg selv og iterere uten å spørre deg hver gang.</p>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Morten · Utviklingsverktøy</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 11 — HOOK · SKILL · AGENT ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Valg av lag</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Strategi-valg</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 2rem;">Når bruke <em>hook, skill eller agent</em>.</h2>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 45%;">Operasjon</th><th>Strategi</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Format og lint</td><td><span class="pill warn">Hook</span> PostToolUse · skjer hver gang</td></tr>
-        <tr><td>Blokkere farlige git-kommandoer</td><td><span class="pill warn">Hook</span> PreToolUse · sikkerhetslag</td></tr>
-        <tr><td>Kjør unit-tester</td><td><span class="pill ok">Skill</span> Veiledende — invokeres når relevant</td></tr>
-        <tr><td>Code review</td><td><span class="pill ok">Skill</span> <code>/review</code> + manuell team-review</td></tr>
-        <tr><td>Security review før release</td><td><span class="pill ok">Skill</span> <code>/security-review</code></td></tr>
-        <tr><td>Sanity-sjekk før deploy</td><td><span class="pill warn">Hook</span> i CI eller pre-merge</td></tr>
-        <tr><td>«Implementer det samme i tre moduler»</td><td><span class="pill">Agenter</span> 3 parallelle worktrees</td></tr>
-        <tr><td>«Researche tre alternativer for X»</td><td><span class="pill">Agenter</span> 3 parallelle <code>Explore</code></td></tr>
-      </tbody>
-    </table>
-    <p class="body anim-in" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); text-align: center;">Må skje hver gang → <strong>hook</strong>. Valgfritt eller veiledende → <strong>skill</strong>. Delegerbart og isolert → <strong>agent</strong>.</p>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Morten · Valg av lag</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Morten · Valg av lag</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Strategi-valg</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 2rem;">Når bruke <em>hook, skill eller agent</em>.</h2>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 45%;">Operasjon</th><th>Strategi</th></tr>
+</thead>
+<tbody>
+<tr><td>Format og lint</td><td><span class="pill warn">Hook</span> PostToolUse · skjer hver gang</td></tr>
+<tr><td>Blokkere farlige git-kommandoer</td><td><span class="pill warn">Hook</span> PreToolUse · sikkerhetslag</td></tr>
+<tr><td>Kjør unit-tester</td><td><span class="pill ok">Skill</span> Veiledende — invokeres når relevant</td></tr>
+<tr><td>Code review</td><td><span class="pill ok">Skill</span> <code>/review</code> + manuell team-review</td></tr>
+<tr><td>Security review før release</td><td><span class="pill ok">Skill</span> <code>/security-review</code></td></tr>
+<tr><td>Sanity-sjekk før deploy</td><td><span class="pill warn">Hook</span> i CI eller pre-merge</td></tr>
+<tr><td>«Implementer det samme i tre moduler»</td><td><span class="pill">Agenter</span> 3 parallelle worktrees</td></tr>
+<tr><td>«Researche tre alternativer for X»</td><td><span class="pill">Agenter</span> 3 parallelle <code>Explore</code></td></tr>
+</tbody>
+</table>
+<p class="body anim-in" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); text-align: center;">Må skje hver gang → <strong>hook</strong>. Valgfritt eller veiledende → <strong>skill</strong>. Delegerbart og isolert → <strong>agent</strong>.</p>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Morten · Valg av lag</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 12 — PLUGINS ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Plugins</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Bundling og distribusjon</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.5rem;">Plugins — <em>bundle</em> og distribusjon.</h2>
-    <p class="lede anim-in" style="margin-bottom: 1.8rem;">Et plugin er en pakke som samler skills, hooks, slash-kommandoer og MCP-servere i én installerbar enhet. Plugin marketplace fra mars 2026 gir et offisielt distribusjonslag.</p>
-    <div class="cols-2 anim-in" style="align-items: stretch;">
-      <div class="col" style="background: var(--bg-deep); padding: 1.4rem 1.6rem; border: 1px solid var(--rule);">
-        <div class="col-label" style="color: var(--accent);">Hva et plugin inneholder</div>
-        <ul style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.7; color: var(--ink-soft); margin: 0.5rem 0 0;">
-          <li>Skills · gjenbrukbare arbeidsflyter</li>
-          <li>Hooks · deterministiske scripts</li>
-          <li>Slash-kommandoer · faste funksjoner</li>
-          <li>MCP-server-konfigurasjoner</li>
-          <li>Agent-definisjoner</li>
-        </ul>
-      </div>
-      <div class="col" style="background: var(--accent-soft); padding: 1.4rem 1.6rem; border: 1px solid var(--accent);">
-        <div class="col-label" style="color: var(--accent);">Praktisk bruk</div>
-        <ul style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.7; color: var(--ink-soft); margin: 0.5rem 0 0;">
-          <li><code>/plugin</code> for å bla i marketplace</li>
-          <li>Installer og oppdater med ett kall</li>
-          <li>Bygg eget plugin for teamets standarder</li>
-          <li>Versjonshåndtering og avhengigheter</li>
-          <li>Tillatelseskontroll på det dere installerer</li>
-        </ul>
-      </div>
-    </div>
-    <p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem; text-align: center;">Når dere har bygd en god kombinasjon av skills og hooks for prosjektene — pakk det som plugin og del.</p>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Morten · Plugins</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Morten · Plugins</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Bundling og distribusjon</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.5rem;">Plugins — <em>bundle</em> og distribusjon.</h2>
+<p class="lede anim-in" style="margin-bottom: 1.8rem;">Et plugin er en pakke som samler skills, hooks, slash-kommandoer og MCP-servere i én installerbar enhet. Plugin marketplace fra mars 2026 gir et offisielt distribusjonslag.</p>
+<div class="cols-2 anim-in" style="align-items: stretch;">
+<div class="col" style="background: var(--bg-deep); padding: 1.4rem 1.6rem; border: 1px solid var(--rule);">
+<div class="col-label" style="color: var(--accent);">Hva et plugin inneholder</div>
+<ul style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.7; color: var(--ink-soft); margin: 0.5rem 0 0;">
+<li>Skills · gjenbrukbare arbeidsflyter</li>
+<li>Hooks · deterministiske scripts</li>
+<li>Slash-kommandoer · faste funksjoner</li>
+<li>MCP-server-konfigurasjoner</li>
+<li>Agent-definisjoner</li>
+</ul>
+</div>
+<div class="col" style="background: var(--accent-soft); padding: 1.4rem 1.6rem; border: 1px solid var(--accent);">
+<div class="col-label" style="color: var(--accent);">Praktisk bruk</div>
+<ul style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.7; color: var(--ink-soft); margin: 0.5rem 0 0;">
+<li><code>/plugin</code> for å bla i marketplace</li>
+<li>Installer og oppdater med ett kall</li>
+<li>Bygg eget plugin for teamets standarder</li>
+<li>Versjonshåndtering og avhengigheter</li>
+<li>Tillatelseskontroll på det dere installerer</li>
+</ul>
+</div>
+</div>
+<p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem; text-align: center;">Når dere har bygd en god kombinasjon av skills og hooks for prosjektene — pakk det som plugin og del.</p>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Morten · Plugins</span>
+</span></footer>
 </section>
-
 <!-- ============ STYRING OG KONTROLL ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">Eivind · Styring og kontroll</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Fra eksperiment til styrt forretningsprosess</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 2rem;">Tre spørsmål ledelsen <em>bør ha svar på</em>.</h2>
-    <div class="cols-3 anim-in" style="margin-bottom: 1.8rem;">
-      <div class="col">
-        <div class="col-label" style="color: var(--accent);">Hvem bestemmer hva AI-en får gjøre?</div>
-        <p class="body" style="font-size: 0.95rem; margin-top: 0.8rem;">Tre lag med policy: globalt → team → lokal. Hooks håndhever det som alltid skal gjelde — blokkering og logging skjer uavhengig av modellens vurdering.</p>
-      </div>
-      <div class="col">
-        <div class="col-label" style="color: var(--accent);">Hvordan vet vi hva som ble gjort?</div>
-        <p class="body" style="font-size: 0.95rem; margin-top: 0.8rem;">Audit-trail via PostToolUse-hooks. Alle fil-endringer, bash-kjøringer og MCP-kall kan logges sentralt. Modellen kan ikke slette historikken.</p>
-      </div>
-      <div class="col">
-        <div class="col-label" style="color: var(--accent);">Hvem eier standardene på tvers?</div>
-        <p class="body" style="font-size: 0.95rem; margin-top: 0.8rem;"><code>CLAUDE.md</code> og <code>.claude/</code> er styringsartefakter — ikke bare teknisk config. Endringer via PR-prosess, som annen policy. Onboarding: én kommando.</p>
-      </div>
-    </div>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 28%;">Kvalitetsport</th><th style="width: 32%;">Mekanisme</th><th>Ansvar</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name">Blokkere farlige handlinger</td><td><span class="pill warn">Hook</span> PreToolUse · alltid aktivt</td><td>Plattform-team / IT</td></tr>
-        <tr><td class="name">Kode-review</td><td><span class="pill ok">Skill</span> <code>/review</code> · før PR åpnes</td><td>Utvikler</td></tr>
-        <tr><td class="name">Sikkerhetsgjennomgang</td><td><span class="pill ok">Skill</span> <code>/security-review</code> · før produksjon</td><td>Lead / arkitekt</td></tr>
-        <tr><td class="name">Audit-trail</td><td><span class="pill warn">Hook</span> PostToolUse · logger til fil</td><td>Plattform-team</td></tr>
-      </tbody>
-    </table>
-    <p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); text-align: center; font-size: 0.95rem;">Trygghet handler ikke om å bremse. Det handler om å gjøre AI-bruk <em>forutsigbar og sporbar</em>.</p>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Eivind · Styring og kontroll</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Eivind · Styring og kontroll</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Fra eksperiment til styrt forretningsprosess</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 56px); margin-bottom: 2rem;">Tre spørsmål ledelsen <em>bør ha svar på</em>.</h2>
+<div class="cols-3 anim-in" style="margin-bottom: 1.8rem;">
+<div class="col">
+<div class="col-label" style="color: var(--accent);">Hvem bestemmer hva AI-en får gjøre?</div>
+<p class="body" style="font-size: 0.95rem; margin-top: 0.8rem;">Tre lag med policy: globalt → team → lokal. Hooks håndhever det som alltid skal gjelde — blokkering og logging skjer uavhengig av modellens vurdering.</p>
+</div>
+<div class="col">
+<div class="col-label" style="color: var(--accent);">Hvordan vet vi hva som ble gjort?</div>
+<p class="body" style="font-size: 0.95rem; margin-top: 0.8rem;">Audit-trail via PostToolUse-hooks. Alle fil-endringer, bash-kjøringer og MCP-kall kan logges sentralt. Modellen kan ikke slette historikken.</p>
+</div>
+<div class="col">
+<div class="col-label" style="color: var(--accent);">Hvem eier standardene på tvers?</div>
+<p class="body" style="font-size: 0.95rem; margin-top: 0.8rem;"><code>CLAUDE.md</code> og <code>.claude/</code> er styringsartefakter — ikke bare teknisk config. Endringer via PR-prosess, som annen policy. Onboarding: én kommando.</p>
+</div>
+</div>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 28%;">Kvalitetsport</th><th style="width: 32%;">Mekanisme</th><th>Ansvar</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">Blokkere farlige handlinger</td><td><span class="pill warn">Hook</span> PreToolUse · alltid aktivt</td><td>Plattform-team / IT</td></tr>
+<tr><td class="name">Kode-review</td><td><span class="pill ok">Skill</span> <code>/review</code> · før PR åpnes</td><td>Utvikler</td></tr>
+<tr><td class="name">Sikkerhetsgjennomgang</td><td><span class="pill ok">Skill</span> <code>/security-review</code> · før produksjon</td><td>Lead / arkitekt</td></tr>
+<tr><td class="name">Audit-trail</td><td><span class="pill warn">Hook</span> PostToolUse · logger til fil</td><td>Plattform-team</td></tr>
+</tbody>
+</table>
+<p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); text-align: center; font-size: 0.95rem;">Trygghet handler ikke om å bremse. Det handler om å gjøre AI-bruk <em>forutsigbar og sporbar</em>.</p>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Eivind · Styring og kontroll</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 13 — TEAM- OG ORGANISASJONSBRUK ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Team og organisasjon</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Fra én utvikler til teamet</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.5rem;">Claude i <em>teamet</em> og <em>organisasjonen</em>.</h2>
-    <p class="lede anim-in" style="margin-bottom: 1.8rem;">Det dere bygger personlig kan deles og standardiseres. Forskjellen mellom enkeltbruk og team-bruk ligger i hvor mye dere committer til repoet.</p>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 26%;">Mekanisme</th><th>Hva det gjør for teamet</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name">CLAUDE.md</td><td>Felles instruksjon i repoet — alle starter samme sted, med samme antakelser</td></tr>
-        <tr><td class="name">.claude/skills/</td><td>Felles arbeidsflyter (review-sjekkliste, release-rutine, sikkerhetsgjennomgang)</td></tr>
-        <tr><td class="name">.claude/settings.json</td><td>Hooks for auto-format, blokkering av farlige kommandoer, delte allowlists</td></tr>
-        <tr><td class="name">.claude/agents/</td><td>Egne agent-definisjoner med rolle og kontekst — delt for hele teamet</td></tr>
-        <tr><td class="name">Plugin</td><td>Skills + hooks + commands + MCP samlet i én installerbar enhet for organisasjonen</td></tr>
-        <tr><td class="name">MCP-servere</td><td>Sentralisert tilgang til interne datakilder og verktøy</td></tr>
-        <tr><td class="name">Team Premium</td><td>~$100/sete/mnd — felles fakturering, administrasjon og brukstilgang på tvers</td></tr>
-      </tbody>
-    </table>
-    <div class="anim-in" style="margin-top: 1rem; padding: 0.85rem 1.3rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
-      <p style="margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Governance ·</strong> Bestem hvem som eier <code>.claude/</code> — én person eller et lite plattform-team. Endringer i hooks og skills skal gå gjennom PR som annen kode. Onboarding av nye: <code>claude</code> + <code>/init</code> + les CLAUDE.md.</p>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Eivind · Team og organisasjon</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Eivind · Team og organisasjon</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Fra én utvikler til teamet</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.5rem;">Claude i <em>teamet</em> og <em>organisasjonen</em>.</h2>
+<p class="lede anim-in" style="margin-bottom: 1.8rem;">Det dere bygger personlig kan deles og standardiseres. Forskjellen mellom enkeltbruk og team-bruk ligger i hvor mye dere committer til repoet.</p>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 26%;">Mekanisme</th><th>Hva det gjør for teamet</th></tr>
+</thead>
+<tbody>
+<tr><td class="name">CLAUDE.md</td><td>Felles instruksjon i repoet — alle starter samme sted, med samme antakelser</td></tr>
+<tr><td class="name">.claude/skills/</td><td>Felles arbeidsflyter (review-sjekkliste, release-rutine, sikkerhetsgjennomgang)</td></tr>
+<tr><td class="name">.claude/settings.json</td><td>Hooks for auto-format, blokkering av farlige kommandoer, delte allowlists</td></tr>
+<tr><td class="name">.claude/agents/</td><td>Egne agent-definisjoner med rolle og kontekst — delt for hele teamet</td></tr>
+<tr><td class="name">Plugin</td><td>Skills + hooks + commands + MCP samlet i én installerbar enhet for organisasjonen</td></tr>
+<tr><td class="name">MCP-servere</td><td>Sentralisert tilgang til interne datakilder og verktøy</td></tr>
+<tr><td class="name">Team Premium</td><td>~$100/sete/mnd — felles fakturering, administrasjon og brukstilgang på tvers</td></tr>
+</tbody>
+</table>
+<div class="anim-in" style="margin-top: 1rem; padding: 0.85rem 1.3rem; border-left: 3px solid var(--accent); background: var(--accent-soft);">
+<p style="margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--ink-soft);"><strong style="color: var(--accent); font-family: var(--font-mono); font-size: 0.78em; letter-spacing: 0.2em; text-transform: uppercase;">Governance ·</strong> Bestem hvem som eier <code>.claude/</code> — én person eller et lite plattform-team. Endringer i hooks og skills skal gå gjennom PR som annen kode. Onboarding av nye: <code>claude</code> + <code>/init</code> + les CLAUDE.md.</p>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Eivind · Team og organisasjon</span>
+</span></footer>
 </section>
-
 <!-- ============ SLIDE 14 — UTOVER SESJONEN ============ -->
 <section class="slide">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Utover sesjonen</span>
-  </header>
-  <div class="slide-content">
-    <div class="eyebrow anim-in">Når Claude jobber uten deg</div>
-    <h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.5rem;">Utover <em>sesjonen</em> — automasjon og SDK.</h2>
-    <p class="lede anim-in" style="margin-bottom: 1.8rem;">Claude trenger ikke å være knyttet til en interaktiv terminal. Disse mekanismene lar dere kjøre Claude som del av infrastrukturen.</p>
-    <table class="t-table compact anim-in">
-      <thead>
-        <tr><th style="width: 24%;">Mekanisme</th><th style="width: 38%;">Hva det er</th><th>Praktisk bruk</th></tr>
-      </thead>
-      <tbody>
-        <tr><td class="name"><code>/schedule</code></td><td>Cron-basert agent-kjøring.</td><td>Daglig rapport · ukentlig sikkerhetssjekk · månedlig oppsummering</td></tr>
-        <tr><td class="name"><code>/loop</code></td><td>Intervall-basert sjekk.</td><td>Polling av deploys · monitorering av en oppgave</td></tr>
-        <tr><td class="name">Headless mode</td><td>Claude Code uten interaktivt UI.</td><td>CI/CD-pipelines · pre-commit hooks · batch-jobber</td></tr>
-        <tr><td class="name">Agent SDK</td><td>Python og TypeScript-biblioteker for å bygge agenter programmatisk.</td><td>Custom agent-orkestrering · embed i egne verktøy</td></tr>
-        <tr><td class="name">Managed Agents</td><td>Cloud-hostede agenter som lever lenger enn sesjonen.</td><td>Langkjørende workflows · webhook-trigger · produksjons-bruk</td></tr>
-      </tbody>
-    </table>
-    <p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem; text-align: center;">Når en oppgave er stabil nok til å automatisere — la Claude kjøre den uten deg. Dokumentasjon: <code>platform.claude.com/docs</code>.</p>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Eivind · Utover sesjonen</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Eivind · Utover sesjonen</span>
+</header>
+<div class="slide-content">
+<div class="eyebrow anim-in">Når Claude jobber uten deg</div>
+<h2 class="heading anim-in" style="font-size: clamp(32px, 4vw, 60px); margin-bottom: 1.5rem;">Utover <em>sesjonen</em> — automasjon og SDK.</h2>
+<p class="lede anim-in" style="margin-bottom: 1.8rem;">Claude trenger ikke å være knyttet til en interaktiv terminal. Disse mekanismene lar dere kjøre Claude som del av infrastrukturen.</p>
+<table class="t-table compact anim-in">
+<thead>
+<tr><th style="width: 24%;">Mekanisme</th><th style="width: 38%;">Hva det er</th><th>Praktisk bruk</th></tr>
+</thead>
+<tbody>
+<tr><td class="name"><code>/schedule</code></td><td>Cron-basert agent-kjøring.</td><td>Daglig rapport · ukentlig sikkerhetssjekk · månedlig oppsummering</td></tr>
+<tr><td class="name"><code>/loop</code></td><td>Intervall-basert sjekk.</td><td>Polling av deploys · monitorering av en oppgave</td></tr>
+<tr><td class="name">Headless mode</td><td>Claude Code uten interaktivt UI.</td><td>CI/CD-pipelines · pre-commit hooks · batch-jobber</td></tr>
+<tr><td class="name">Agent SDK</td><td>Python og TypeScript-biblioteker for å bygge agenter programmatisk.</td><td>Custom agent-orkestrering · embed i egne verktøy</td></tr>
+<tr><td class="name">Managed Agents</td><td>Cloud-hostede agenter som lever lenger enn sesjonen.</td><td>Langkjørende workflows · webhook-trigger · produksjons-bruk</td></tr>
+</tbody>
+</table>
+<p class="body anim-in" style="margin-top: 1.2rem; font-style: italic; color: var(--ink-mid); font-size: 0.95rem; text-align: center;">Når en oppgave er stabil nok til å automatisere — la Claude kjøre den uten deg. Dokumentasjon: <code>platform.claude.com/docs</code>.</p>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Eivind · Utover sesjonen</span>
+</span></footer>
 </section>
-
 <!-- ============ OPPSUMMERING ============ -->
 <section class="slide slide-title">
-  <header class="slide-header">
-    <a href="index.html" class="brand">Moelven Industrier · AI-dag</a>
-    <span class="right">— Oppsummering</span>
-  </header>
-  <div class="slide-content">
-    <div class="label anim-in">Avslutning</div>
-    <h1 class="display anim-in" style="font-size: clamp(50px, 8vw, 140px);"><em>Oppsummering</em>.</h1>
-    <div class="anim-in" style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; max-width: 1200px;">
-      <div>
-        <div class="col-label" style="color: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;">Prøv ut i ettermiddag</div>
-        <ul class="body" style="font-size: 1rem; list-style: none; padding: 0;">
-          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Skriv din første egne skill</li>
-          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Sett opp ett PostToolUse-hook</li>
-          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Koble på GitHub MCP</li>
-          <li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Spawne en agent og se hva som skjer</li>
-          <li style="padding: 0.4rem 0;">Demo for kollegene kl. 15:30</li>
-        </ul>
-      </div>
-      <div>
-        <div class="col-label" style="color: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;">Følg med</div>
-        <p class="body" style="font-size: 0.95rem; font-family: var(--font-mono); line-height: 1.8;">code.claude.com/docs/en/changelog<br>platform.claude.com/docs<br>github.com/anthropics/claude-code</p>
-        <p class="body" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); font-family: var(--font-display); font-size: 1.1rem;">Sett av en halvtime hver uke. Det er nok.</p>
-      </div>
-    </div>
-  </div>
-  <footer class="slide-footer">
-    <span class="counter"></a>
-    <span class="right">Eivind · Tilbake til prosjekter 13:20</span>
-  </footer>
+<header class="slide-header">
+<a class="brand" href="index.html">Moelven Industrier · AI-dag</a>
+<span class="right">Eivind · Oppsummering</span>
+</header>
+<div class="slide-content">
+<div class="label anim-in">Avslutning</div>
+<h1 class="display anim-in" style="font-size: clamp(50px, 8vw, 140px);"><em>Oppsummering</em>.</h1>
+<div class="anim-in" style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4vw; max-width: 1200px;">
+<div>
+<div class="col-label" style="color: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;">Prøv ut i ettermiddag</div>
+<ul class="body" style="font-size: 1rem; list-style: none; padding: 0;">
+<li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Skriv din første egne skill</li>
+<li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Sett opp ett PostToolUse-hook</li>
+<li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Koble på GitHub MCP</li>
+<li style="padding: 0.4rem 0; border-bottom: 1px solid var(--rule);">Spawne en agent og se hva som skjer</li>
+<li style="padding: 0.4rem 0;">Demo for kollegene kl. 15:30</li>
+</ul>
+</div>
+<div>
+<div class="col-label" style="color: var(--accent); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1rem;">Følg med</div>
+<p class="body" style="font-size: 0.95rem; font-family: var(--font-mono); line-height: 1.8;">code.claude.com/docs/en/changelog<br/>platform.claude.com/docs<br/>github.com/anthropics/claude-code</p>
+<p class="body" style="margin-top: 1.5rem; font-style: italic; color: var(--ink-mid); font-family: var(--font-display); font-size: 1.1rem;">Sett av en halvtime hver uke. Det er nok.</p>
+</div>
+</div>
+</div>
+<footer class="slide-footer">
+<span class="counter">
+<span class="right">Eivind · Tilbake til prosjekter 13:20</span>
+</span></footer>
 </section>
-
 </div>
 <script src="deck.js"></script>
 </body>
